@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<part xmlns="urn:enonic:xp:model:1.0">
+  <display-name i18n="contentList.displayName">Content List</display-name>
+  <description i18n="contentList.description">Lists out children of this page</description>
+
+  <form />
+</part>

@@ -1,0 +1,15 @@
+:root {
+  color-scheme: light dark;
+
+  @media (prefers-color-scheme: dark) {
+    --color-background: var(--color-black);
+    --color-base: var(--color-white);
+    --color-primary: var(--color-turquoise);
+  }
+
+  @media (prefers-color-scheme: light) {
+    --color-background: var(--color-white);
+    --color-base: var(--color-black);
+    --color-primary: var(--color-petroleum);
+  }
+}

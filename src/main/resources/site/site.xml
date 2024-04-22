@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site xmlns="urn:enonic:xp:model:1.0">
+  <x-data name="intro" allowContentTypes="base:folder" />
+  <x-data name="menu-item" optional="true"/>
+
+	<form>
+    <field-set>
+      <label i18n="site.header">Header</label>
+      <items>
+        <input name="logoId" type="ImageSelector">
+          <label i18n="site.logoId">The organizations logo</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+      </items>
+    </field-set>
+
+    <field-set>
+      <label i18n="site.footer">Footer</label>
+      <items>
+        <input name="footerColumns" type="HtmlArea">
+          <label i18n="site.footerColumns">Column</label>
+          <occurrences minimum="0" maximum="4"/>
+          <config>
+            <exclude>*</exclude>
+            <include>Format | Bold Italic RemoveFormat | BulletedList NumberedList | Link Unlink Image</include>
+            <allowHeadings>h2 h3 h4</allowHeadings>
+          </config>
+        </input>
+      </items>
+    </field-set>
+
+    <field-set>
+      <label i18n="site.errorPage">Error Page</label>
+      <items>
+        <input name="errorTitle" type="TextLine">
+          <label i18n="site.title">Title</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+
+        <input name="errorMessage" type="HtmlArea">
+          <label i18n="site.errorPage.message">Error Message</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+
+        <input name="errorImage" type="ImageSelector">
+          <label i18n="site.image">Image</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+      </items>
+    </field-set>
+	</form>
+
+  <mappings>
+    <mapping controller="/controllers/file-download.js" order="10">
+      <match>type:'media:document'</match>
+    </mapping>
+    <mapping controller="/controllers/file-download.js" order="20">
+      <match>type:'media:presentation'</match>
+    </mapping>
+  </mappings>
+</site>

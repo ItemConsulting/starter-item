@@ -1,0 +1,53 @@
+:root {
+  /* Margins */
+  --margin-xs: var(--spacing-xs); /*  10px */
+  --margin-s: var(--spacing-xs); /*  10px */
+  --margin-m: var(--spacing-s); /* 20px */
+  --margin-l: var(--spacing-m); /* 40px */
+  --margin-xl: var(--spacing-l);  /* 60px */
+  --margin-xxl: var(--spacing-xl); /* 80px */
+  --margin-xxxl: var(--spacing-xxl);  /* 120px */
+
+  /* Padding */
+  --padding-10: var(--spacing-xxs);
+  --padding-20: var(--spacing-xs);
+  --padding-40: var(--spacing-s);
+  --padding-60: var(--spacing-m);
+  --padding-80: var(--spacing-l);
+  --padding-120: var(--spacing-xl);
+  --padding-200: var(--spacing-xxl);
+
+  /* Font sizes */
+  --font-size-xxl: var(--font-size-900);
+  --font-size-xl: var(--font-size-700);
+  --font-size-l: var(--font-size-550);
+  --font-size-m: var(--font-size-300);
+  --font-size-s: var(--font-size-100);
+
+  @media (width > 576px) {
+    /* Margins Desktop */
+    --margin-xs: var(--spacing-xs);
+    --margin-s: var(--spacing-s);
+    --margin-m: var(--spacing-m);
+    --margin-l: var(--spacing-l);
+    --margin-xl: var(--spacing-xl);
+    --margin-xxl: var(--spacing-xxl);
+    --margin-xxxl: var(--spacing-xxxl);
+
+    /* Padding Desktop */
+    --padding-10: var(--spacing-xs);
+    --padding-20: var(--spacing-s);
+    --padding-40: var(--spacing-m);
+    --padding-60: var(--spacing-l);
+    --padding-80: var(--spacing-xl);
+    --padding-120: var(--spacing-xxl);
+    --padding-200: var(--spacing-xxxl);
+
+    /* Font sizes Desktop */
+    --font-size-xxl: var(--font-size-950); /* 40 */
+    --font-size-xl: var(--font-size-750); /* 28 */
+    --font-size-l: var(--font-size-550); /* 22 */
+    --font-size-m: var(--font-size-350); /* 18 */
+    --font-size-s: var(--font-size-150); /* 14 */
+  }
+}

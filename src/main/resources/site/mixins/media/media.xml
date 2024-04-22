@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mixin xmlns="urn:enonic:xp:model:1.0">
+  <display-name i18n="mediaMixin.displayName">Media</display-name>
+
+  <form>
+    <option-set name="media">
+      <label i18n="mediaMixin.image">Image</label>
+      <occurrences minimum="1" maximum="1"/>
+
+      <options minimum="1" maximum="1">
+        <option name="withAltText">
+          <label i18n="mediaMixin.withAltText">Normal image</label>
+          <help-text i18n="mediaMixin.withAltTextHelpText">Image that is part of the content on the page</help-text>
+          <items>
+            <input name="image" type="ImageSelector">
+              <label i18n="mediaMixin.image">Image</label>
+              <occurrences minimum="1" maximum="1"/>
+            </input>
+
+            <input name="altText" type="TextLine">
+              <label i18n="mediaMixin.altText">Description of the image for visually impaired users (alt text)</label>
+              <help-text i18n="mediaMixin.altTextHelpText">Describe the image in the context of the article</help-text>
+              <occurrences minimum="1" maximum="1"/>
+            </input>
+
+            <input name="caption" type="TextLine">
+              <label i18n="mediaMixin.caption">Caption</label>
+              <occurrences minimum="0" maximum="1"/>
+            </input>
+          </items>
+          <default>true</default>
+        </option>
+
+        <option name="withoutAltText">
+          <label i18n="mediaMixin.withoutAltText">Decorative image</label>
+          <help-text i18n="mediaMixin.withoutAltTextHelpText">Image that is pure decoration</help-text>
+          <items>
+            <input name="image" type="ImageSelector">
+              <label i18n="mediaMixin.image">Image</label>
+              <occurrences minimum="1" maximum="1"/>
+            </input>
+
+            <input name="caption" type="TextLine">
+              <label i18n="mediaMixin.caption">Caption</label>
+              <occurrences minimum="0" maximum="1"/>
+            </input>
+          </items>
+        </option>
+
+        <option name="none">
+          <label i18n="mediaMixin.none">No image</label>
+          <help-text i18n="mediaMixin.noneHelpText">Don't display an image</help-text>
+          <items />
+        </option>
+      </options>
+    </option-set>
+  </form>
+</mixin>

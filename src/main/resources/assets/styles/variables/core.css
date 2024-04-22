@@ -1,0 +1,52 @@
+:root {
+  /* Core tokens */
+  --font-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Colors token */
+  --color-black: #000814;
+  --color-white: #FFFFFF;
+  --color-petroleum: #0B3C49;
+  --color-turquoise: #0AFFD2;
+
+  /* Spacing */
+  --spacing-xxs: 0.3125rem; /*  5px */
+  --spacing-xs: 0.625rem; /*  10px */
+  --spacing-s: 1.25rem; /* 20px */
+  --spacing-m: 2.5rem; /* 40px */
+  --spacing-l: 3.75rem; /* 60px */
+  --spacing-xl: 5rem; /* 80px */
+  --spacing-xxl: 7.5rem; /* 120px */
+  --spacing-xxxl: 12.5rem; /* 200px */
+
+  /* Container widths */
+  --container-sm: 75ch;
+  --container-md: 970px;
+  --container-lg: 1170px;
+
+  /* Font size */
+  --font-size-100: 13px;
+  --font-size-150: 14px;
+  --font-size-300: 16px;
+  --font-size-350: 18px;
+  --font-size-500: 20px;
+  --font-size-550: 22px;
+  --font-size-700: 24px;
+  --font-size-750: 28px;
+  --font-size-900: 32px;
+  --font-size-925: 36px;
+  --font-size-950: 40px;
+
+  /* Font Weight */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line height */
+  --line-height-xs: 1.35;
+  --line-height-s: 1.45;
+  --line-height-m: 1.50;
+  --line-height-l: 1.55;
+  --line-height-xl: 1.60;
+}

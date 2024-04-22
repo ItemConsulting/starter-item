@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<content-type xmlns="urn:enonic:xp:model:1.0">
+  <display-name i18n="article.displayName">Article</display-name>
+  <description i18n="article.description">News article content</description>
+  <super-type>base:structured</super-type>
+
+  <form>
+    <mixin name="media" />
+
+    <field-set>
+      <label i18n="article.content">Article content</label>
+      <items>
+        <mixin name="intro" />
+      </items>
+    </field-set>
+  </form>
+</content-type>
