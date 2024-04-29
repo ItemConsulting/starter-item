@@ -21,7 +21,7 @@ export const articleHeader: StoryObj<FreemarkerParams> = {
     displayName: "This is a typical title of an article",
     intro: "An intro can be relevant some times. Other times edits write a whole article here.",
     media: {
-      mediaSrc: "item.svg",
+      mediaSrc: "cabin.png",
       altText: "Item Logo",
     },
   },
