@@ -19,7 +19,7 @@
     "check:types": "concurrently -g -r --timings npm:check:types:*",
     "check:types:asset": "npx tsc --noEmit -p src/main/resources/assets/tsconfig.json",
     "check:types:server": "npx tsc --noEmit",
-    "lint": "eslint --cache  src/main/resources/**/*.ts",
+    "lint": "eslint --cache src/main/resources/**/*.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
