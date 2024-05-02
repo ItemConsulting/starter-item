@@ -1,0 +1,35 @@
+= Lint
+:sourcedir: ../
+
+== Install
+
+[source, Terminal]
+----
+npm install --save-dev eslint @eslint/js typescript typescript-eslint
+----
+
+== Configure
+
+=== package.json
+
+Add the following scripts to the package.json file:
+
+[source, JSON]
+----
+{
+  "scripts": {
+    "check": "concurrently -c auto -g --timings npm:check:types npm:lint",
+    "lint": "eslint --cache",
+  }
+}
+----
+
+== eslint.config.mjs
+
+Create the following file:
+
+.eslint.config.mjs
+[source, ECMAScript]
+----
+include::{sourcedir}eslint.config.mjs[]
+----

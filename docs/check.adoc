@@ -1,0 +1,40 @@
+= Type checking
+
+== Configure
+
+=== package.json
+
+Add the following scripts to the package.json file:
+
+[source, JSON]
+----
+{
+  "scripts": {
+    "check": "concurrently -c auto -g --timings npm:check:types",
+    "check:types": "concurrently -g -r --timings npm:check:types:*",
+    "check:types:asset": "npx tsc --noEmit -p src/main/resources/assets/tsconfig.json",
+    "check:types:server": "npx tsc --noEmit"
+  }
+}
+----
+
+=== build.gradle
+
+Add the following task to the build.gradle file:
+
+.build.gradle
+[source, Groovy]
+----
+tasks.register('npmCheck', NpmTask) {
+	dependsOn npmInstall
+	args = [
+		'run',
+		'check'
+	]
+	environment = [
+		'FORCE_COLOR': 'true',
+	]
+}
+
+check.dependsOn npmCheck
+----

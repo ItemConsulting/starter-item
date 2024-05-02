@@ -1,0 +1,72 @@
+= Testing
+:sourcedir: ../
+
+== Install
+
+[source, Terminal]
+----
+npm install --save-dev jest-environment-jsdom ts-node ts-jest
+----
+
+
+== Configure
+
+=== jest.config.ts
+
+Create a jest.config.js file in the root of the project with the following content:
+
+[source, TypeScript]
+----
+include::{sourcedir}jest.config.ts[]
+----
+
+=== src/jest/server/global.d.ts
+
+[source, TypeScript]
+----
+include::{sourcedir}src/jest/server/global.d.ts[]
+----
+
+=== src/jest/server/setupFile.ts
+
+[source, TypeScript]
+----
+include::{sourcedir}src/jest/server/setupFile.ts[]
+----
+
+=== package.json
+
+Add the following scripts to the package.json file:
+
+[source, JSON]
+----
+{
+  "scripts": {
+    "cov": "jest --no-cache --coverage",
+    "test": "jest --no-cache"
+  }
+}
+----
+
+=== build.gradle
+
+Add the following task to the build.gradle file:
+
+.build.gradle
+[source, Groovy]
+----
+tasks.register('npmTest', NpmTask) {
+	args = [
+		'run',
+		'test'
+	]
+	dependsOn npmInstall
+	environment = [
+		'FORCE_COLOR': 'true',
+	]
+  inputs.dir 'src/jest'
+  outputs.dir 'coverage'
+}
+
+test.dependsOn npmTest
+----

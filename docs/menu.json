@@ -1,0 +1,28 @@
+{
+  "menuItems": [
+    {
+      "title": "Introduction",
+      "document": "index"
+    },
+    {
+        "title": "1 - Setup",
+        "document": "setup"
+    },
+    {
+        "title": "2 - Concepts",
+        "document": "concepts"
+    },
+    {
+        "title": "3 - Transpilation",
+        "document": "transpile"
+    },
+    {
+      "title": "4 - Type checking",
+      "document": "check"
+    },
+    {
+      "title": "5 - Linting",
+      "document": "lint"
+    }
+  ]
+}
