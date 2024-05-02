@@ -23,6 +23,10 @@
     {
       "title": "5 - Linting",
       "document": "lint"
+    },
+    {
+      "title": "6 - Testing",
+      "document": "test"
     }
   ]
 }
