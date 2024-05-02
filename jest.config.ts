@@ -132,6 +132,7 @@ const serverSideConfig: Config.InitialProjectOptions = {
 
 const customJestConfig: Config.InitialOptions = {
   coverageProvider: 'v8', // To get correct line numbers under jsdom
+  passWithNoTests: true,
   projects: [clientSideConfig, serverSideConfig],
 };
 
