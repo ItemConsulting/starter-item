@@ -5,7 +5,7 @@ How to add TypeScript to an Enonic XP project based on starter-vanilla.
 
 * <<setup#,Setup>>
 * <<concepts#,Concepts>>
-* <<transpile#,Transpilation>>
+* <<build#,Building>>
 * <<check#,Type checking>>
 * <<lint#,Linting>>
 * <<test#,Testing>>

@@ -13,8 +13,8 @@
         "document": "concepts"
     },
     {
-        "title": "3 - Transpilation",
-        "document": "transpile"
+        "title": "3 - Building",
+        "document": "build"
     },
     {
       "title": "4 - Type checking",
