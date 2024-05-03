@@ -9,14 +9,11 @@ function checkFilesRecursively(folderPath) {
   for (const file of files) {
     const filePath = `${folderPath}/${file}`;
     if (ignoredPaths.some(d => filePath.includes(d))) {
-      // console.debug('ignoredPath:', filePath);
       continue; // Skip ignored folders
     }
     if (fs.lstatSync(filePath).isDirectory()) {
-      // console.debug('filePath:', filePath);
       checkFilesRecursively(filePath);
     } else if (file.match(pattern)) {
-      // console.debug('File found:', filePath);
       return true; // Exit with code 0 if a matching file is found
     }
   }
@@ -26,6 +23,5 @@ function checkFilesRecursively(folderPath) {
 if (checkFilesRecursively(folderPath)) {
   process.exit(0);
 } else {
-  // console.debug('No files found matching the pattern.');
   process.exit(1);
 }

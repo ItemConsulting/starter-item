@@ -12,8 +12,8 @@ Add the following scripts to the package.json file:
   "scripts": {
     "check": "concurrently -c auto -g --timings npm:check:types",
     "check:types": "concurrently -g -r --timings npm:check:types:*",
-    "check:types:asset": "npx tsc --noEmit -p src/main/resources/assets/tsconfig.json",
-    "check:types:server": "npx tsc --noEmit"
+    "check:types:assets": "node tsup/anyAssetFiles.js && npx tsc --noEmit -p src/main/resources/assets/tsconfig.json || exit 0",
+    "check:types:server": "node tsup/anyServerFiles.js && npx tsc --noEmit -p src/main/resources/tsconfig.json || exit 0",
   }
 }
 ----

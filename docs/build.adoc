@@ -29,6 +29,22 @@ npm install --save-dev @swc/core concurrently tsup typescript
 
 == Configure
 
+=== Check if there are any files to build
+
+We need a cross platform way to check if there are any files to build, so here's are a couple scripts that does just that:
+
+.tsup/anyAssetFiles.js
+[source, JavaScript]
+----
+include::{sourcedir}tsup/anyAssetFiles.js[]
+----
+
+.tsup/anyServerFiles.js
+[source, JavaScript]
+----
+include::{sourcedir}tsup/anyServerFiles.js[]
+----
+
 === package.json
 
 Add the following scripts to the package.json file:
@@ -38,8 +54,8 @@ Add the following scripts to the package.json file:
 {
   "scripts": {
     "build": "concurrently -c auto -g --timings npm:build:*",
-    "build:assets": "find src/main/resources/assets -type f -name *.ts && npx tsup -d build/resources/main/assets || exit 0",
-    "build:server": "find src/main/resources -type d -name assets -prune -o -type f -name *.ts -print && npx tsup -d build/resources/main || exit 0"
+    "build:assets": "node tsup/anyAssetFiles.js && npx tsup -d build/resources/main/assets || exit 0",
+    "build:server": "node tsup/anyServerFiles.js && npx tsup -d build/resources/main || exit 0",
   }
 }
 ----
