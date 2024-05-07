@@ -25,26 +25,8 @@
   ],
 
   "compilerOptions": {
-
-    // If you are planning to write tsx files, you should comment in the next
-    // line:
-    // "jsx": "react",
-
     "lib": [
       "DOM", // console, document, window, etc...
-      // "ES2020", // Modern browsers
     ],
-
-    // "moduleResolution": "node",
-
-    // "skipLibCheck": true,
-
-    // "target": "ES2020", // Modern browsers
-
-    // "types": [
-      // If you are planning to write tsx files, you should install @types/react
-      // and comment in the next line:
-      // "react"
-    // ],
   },
 }

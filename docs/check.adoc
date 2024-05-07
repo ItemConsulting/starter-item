@@ -1,5 +1,7 @@
 = Type checking
 
+Type checking is useful to catch errors early in the development process. This chapter will explain how to set up type checking for your project.
+
 == Configure
 
 === package.json
@@ -20,7 +22,7 @@ Add the following scripts to the package.json file:
 
 === build.gradle
 
-Add the following task to the build.gradle file:
+Add the following task to the build.gradle file, which will run the npm check script defined in package.json:
 
 .build.gradle
 [source, Groovy]
@@ -37,4 +39,11 @@ tasks.register('npmCheck', NpmTask) {
 }
 
 check.dependsOn npmCheck
+----
+
+The last command makes sure that type checking is executed as a part of the build, but it can also be run separately (to skip the entire build process and just check for errors) with the following command:
+
+[source, Terminal]
+----
+./gradlew check
 ----

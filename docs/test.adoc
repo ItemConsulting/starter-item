@@ -1,6 +1,8 @@
 = Testing
 :sourcedir: ../
 
+If you are writing Typescript code, chances are you want to write tests for that code, and you want to write them in Typescript. Here's how to configure test runs in your application. In our example we will configure Jest, a JavaScript testing framework designed to ensure correctness of your JavaScript codebase.
+
 == Install
 
 [source, Terminal]
@@ -11,23 +13,25 @@ npm install --save-dev jest-environment-jsdom ts-node ts-jest
 
 == Configure
 
-=== jest.config.ts
+=== Jest
 
-Create a jest.config.js file in the root of the project with the following content:
+In our example we will configure processing of server-side Typescript code, but you can similarly configure client-side code.
+
+Create a file called jest.config.js in the root of the project with the following content:
 
 [source, TypeScript]
 ----
 include::{sourcedir}jest.config.ts[]
 ----
 
-=== src/jest/server/global.d.ts
+With this config Jest will find and execute test files in the 'src/main/resources' folder called `*.test.ts` (or `.tsx`) or `*.spec.ts` (or `.tsx`).
+
+Set up `src/jest/server` folder structure and create two files inside:
 
 [source, TypeScript]
 ----
 include::{sourcedir}src/jest/server/global.d.ts[]
 ----
-
-=== src/jest/server/setupFile.ts
 
 [source, TypeScript]
 ----
@@ -47,6 +51,8 @@ Add the following scripts to the package.json file:
   }
 }
 ----
+
+`test` command starts execution of tests. `cov` command does exactly the same, but also generates coverage report.
 
 === build.gradle
 
@@ -69,4 +75,11 @@ tasks.register('npmTest', NpmTask) {
 }
 
 test.dependsOn npmTest
+----
+
+With this setup tests will be executed on every build, but you can also run them separately with the following command:
+
+[source, Terminal]
+----
+./gradlew test
 ----

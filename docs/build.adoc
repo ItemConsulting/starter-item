@@ -1,11 +1,13 @@
 = Building
 :sourcedir: ../
 
+In this chapter we will learn how to set up transpilation of Typescript code - both client- and server-side - to JavaScript.
+
 == Install
 
 === Types
 
-Types useful when configuring the build system:
+Install types needed to configure the build system:
 
 [source, Terminal]
 ----
@@ -13,7 +15,7 @@ npm install --save-dev @types/node
 ----
 
 
-Types useful when programming Enonic XP server-side code:
+Install types needed to work with Enonic Core API:
 [source, Terminal]
 ----
 npm install --save-dev @enonic-types/core @enonic-types/lib-content @enonic-types/lib-portal @enonic-types/global @enonic-types/lib-context @enonic-types/lib-auth @enonic-types/lib-event @enonic-types/lib-common @enonic-types/lib-repo @enonic-types/lib-websocket @enonic-types/lib-node @enonic-types/lib-i18n @enonic-types/lib-task @enonic-types/lib-io @enonic-types/lib-project @enonic-types/lib-mail @enonic-types/lib-export @enonic-types/lib-scheduler @enonic-types/lib-admin @enonic-types/lib-cluster @enonic-types/lib-value
@@ -22,16 +24,23 @@ npm install --save-dev @enonic-types/core @enonic-types/lib-content @enonic-type
 
 === Tools
 
+Install tools required to set up transpilation and bundling of Typescript code:
+
 [source, Terminal]
 ----
-npm install --save-dev @swc/core concurrently tsup typescript
+npm install --save-dev typescript tsup @swc/core concurrently
 ----
+
+* `typescript` will enable support of Typescript language by adding syntax for type declarations and annotations
+* `tsup` is a TypeScript bundler powered by esbuild
+* `@swc/core` is a TypeScript / JavaScript compiler
+* `concurrently` is a tool to run multiple commands concurrently
 
 == Configure
 
-=== Check if there are any files to build
+=== File processing
 
-We need a cross platform way to check if there are any files to build, so here's are a couple scripts that does just that:
+We need a cross-platform way to check if there are any files to build, so here are a couple scripts that do just that:
 
 .tsup/anyAssetFiles.js
 [source, JavaScript]
@@ -47,7 +56,7 @@ include::{sourcedir}tsup/anyServerFiles.js[]
 
 === package.json
 
-Add the following scripts to the package.json file:
+Add the following scripts to the `package.json` file (the first script concurrently executes the other two):
 
 [source, JSON]
 ----
@@ -71,7 +80,7 @@ CAUTION: You will typically NOT publish an Enonic XP project to npm, so it's a g
 
 === TypeScript configuration
 
-Add the following files to the project:
+Add the following config files to the project:
 
 .tsconfig.json
 [source, JSON]
@@ -93,34 +102,34 @@ include::{sourcedir}src/main/resources/assets/tsconfig.json[]
 
 === TSup configuration
 
-Add the following files to the project:
+Add the following config files to the project:
 
 .tsup.config.ts
-[source, JSON]
+[source, Typescript]
 ----
 include::{sourcedir}tsup.config.ts[]
 ----
 
 .tsup/index.d.ts
-[source, JSON]
+[source, Typescript]
 ----
 include::{sourcedir}tsup/index.d.ts[]
 ----
 
 .tsup/constants.ts
-[source, JSON]
+[source, Typescript]
 ----
 include::{sourcedir}tsup/constants.ts[]
 ----
 
 .tsup/client-asset.ts
-[source, JSON]
+[source, Typescript]
 ----
 include::{sourcedir}tsup/client-asset.ts[]
 ----
 
 .tsup/server.ts
-[source, JSON]
+[source, Typescript]
 ----
 include::{sourcedir}tsup/server.ts[]
 ----
@@ -129,7 +138,7 @@ include::{sourcedir}tsup/server.ts[]
 
 === Node-gradle plugin
 
-In order for gradle to be able to run npm scripts, you need to use the node-gradle plugin.
+In order for Gradle to be able to run npm scripts, you need to use the node-gradle plugin.
 
 Add the following to the build.gradle file:
 
@@ -155,7 +164,7 @@ node {
 
 === npmBuild task
 
-Add the following task to the build.gradle file:
+Add the following task to the build.gradle file, which will run the npm build script defined in package.json:
 
 .build.gradle
 [source, Groovy]
@@ -179,7 +188,7 @@ tasks.register('npmBuild', NpmTask) {
 jar.dependsOn npmBuild
 ----
 
-=== Avoid source files in the build folder and jar file
+=== Clean up jar file
 
 Add the following to the build.gradle file:
 
@@ -191,9 +200,11 @@ tasks.withType(Copy).configureEach {
 }
 
 processResources {
-	exclude '**/.gitkeep'
+  exclude '**/.gitkeep'
   exclude '**/*.json'
-	exclude '**/*.ts'
-	exclude '**/*.tsx'
+  exclude '**/*.ts'
+  exclude '**/*.tsx'
 }
 ----
+
+This will make sure that assembled jar file contains only required assets and none of the original source TypeScript files.

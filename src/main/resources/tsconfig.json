@@ -36,10 +36,6 @@
 
     "skipLibCheck": true,
 
-    // WARNING: Target must be set in ../../../tsup/server.ts to work correctly!
-    // "target": "ES3", // tsup WARNING Unrecognized target environment "ES3"
-		// "target": "ES5", // tsup Transforming const to the configured target environment ("ES5") is not supported yet
-
     // By default all visible ”@types” packages are included in your compilation.
     // Packages in node_modules/@types of any enclosing folder are considered visible.
     // For example, that means packages within ./node_modules/@types/,

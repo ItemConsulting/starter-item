@@ -1,11 +1,13 @@
 = Lint
 :sourcedir: ../
 
+ESLint is a static code analysis tool for identifying problematic patterns found in JavaScript code. It is highly configurable and can be used to enforce a consistent coding style. Having linting as a part of the build process is considered a good practice.
+
 == Install
 
 [source, Terminal]
 ----
-npm install --save-dev eslint @eslint/js typescript typescript-eslint
+npm install --save-dev eslint @eslint/js typescript-eslint
 ----
 
 == Configure
@@ -24,12 +26,16 @@ Add the following scripts to the package.json file:
 }
 ----
 
-== eslint.config.mjs
+TIP: Note that `check` command was added to package.json in the previous chapter about type checking. Here we just modify it to execute linting as a part of the `check` command.
+
+=== eslint.config.mjs
 
 Create the following file:
 
 .eslint.config.mjs
-[source, ECMAScript]
+[source, Javascript]
 ----
 include::{sourcedir}eslint.config.mjs[]
 ----
+
+Linting will now be executed as a part of the `check` command and, therefore, as a part of the build process.

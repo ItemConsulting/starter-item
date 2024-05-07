@@ -8,7 +8,7 @@ A transpiler is a compilator that converts TypeScript code into JavaScript code.
 
 == Language
 
-Currently the Enonic XP engine supports `JavaScript 1.9` (2011) with some `ECMAScript 2015` (ES6) features. This is because it runs on the `Nashorn` JavaScript engine inside the JVM (Java Virtual Machine).
+Currently, the Enonic XP engine supports `JavaScript 1.9` (2011) with some `ECMAScript 2015` (ES6) features. This is because it runs on the `Nashorn` JavaScript engine inside the JVM (Java Virtual Machine).
 
 TIP: The next major release of Enonic XP is expected to be using `GraalJS` which supports the latest ECMAScript standard, which currently is `ECMAScript 2023`.
 
@@ -44,7 +44,7 @@ This is where `meta-tools` come in. Meta-tools are tools that combine multiple t
 
 NOTE: For many years `Webpack` has been the most common tool for working with JavaScript code. It is very powerful and flexible, but also very complex and difficult to configure. In addition, it is not very fast.
 
-Recently `TSup` appeared on the scene. TSup is a simple and fast tool that is specifically designed for TypeScript code. It is easy to use and configure. It also has all the features you need to work with Enonic XP server-side code.
+Recently `TSup` appeared on the scene. TSup is a simple and fast tool that is specifically designed for TypeScript code. It is easy to use and configure. It also has all the features you need to work with server-side code in Enonic XP.
 
-TIP: `bun` is an up and coming even faster tool, but is still missing some features to work with Enonic XP server-side code. It receives regular updates so hopefully we will be able to use it soon.
+TIP: `bun` is an even faster up and coming tool, but is still missing some features to work with Enonic XP server-side code. It receives regular updates, so hopefully we will be able to use it soon.
 

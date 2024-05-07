@@ -1,24 +1,24 @@
 = Setup
 
-The idea behind this tutorial is to learn how to add TypeScript to an existing project.
+The idea behind this tutorial is to learn how to configure transpilation of TypeScript in an existing XP project.
 
-Most projects start with a simple setup and then grows in complexity as more an more features are added. This is where TypeScript can help you to keep your codebase clean and maintainable.
+Most projects start with a simple setup and then grow in complexity as more and more features are added. This is where TypeScript can help you keep your codebase clean and maintainable.
 
 
 == Start point
 
-We start this tutorial with the most basic setup possible, a vanilla project:
+We start this tutorial with the most basic setup possible, a vanilla XP project:
 
 [source, Terminal]
 ----
-enonic project create com.example.myproject -r starter-vanilla -d myproject
+enonic create myproject -r starter-vanilla
 ----
 
-== Solution
+== TLDR
 
 If you are starting a new project from scratch or you just want to see the final result of this tutorial, you can use the following command to create a new project with all the TypeScript features already added:
 
 [source, Terminal]
 ----
-enonic project create com.example.myproject -r starter-ts -d myproject
+enonic create myproject -r starter-ts
 ----
