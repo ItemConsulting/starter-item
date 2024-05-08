@@ -1,0 +1,14 @@
+= Project
+
+== Create
+
+We start this tutorial with the most basic setup possible, a vanilla XP project:
+
+[source, Terminal]
+----
+enonic create myproject -r starter-vanilla
+----
+
+== Summary
+
+In the next chapter we will learn how to configure <<build#,Transpilation and Bundling>> of TypeScript code.

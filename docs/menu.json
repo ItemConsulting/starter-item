@@ -5,12 +5,12 @@
       "document": "index"
     },
     {
-        "title": "1 - Setup",
-        "document": "setup"
+        "title": "1 - Concepts",
+        "document": "concepts"
     },
     {
-        "title": "2 - Concepts",
-        "document": "concepts"
+      "title": "2 - Create project",
+      "document": "project"
     },
     {
         "title": "3 - Building",
@@ -27,6 +27,10 @@
     {
       "title": "6 - Testing",
       "document": "test"
+    },
+    {
+      "title": "7 - Result",
+      "document": "result"
     }
   ]
 }

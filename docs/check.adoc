@@ -47,3 +47,7 @@ The last command makes sure that type checking is executed as a part of the buil
 ----
 ./gradlew check
 ----
+
+== Summary
+
+In the next chapter we will learn how to configure <<lint#,Linting>> of TypeScript code.

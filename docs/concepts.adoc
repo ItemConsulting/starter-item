@@ -48,3 +48,6 @@ Recently `TSup` appeared on the scene. TSup is a simple and fast tool that is sp
 
 TIP: `bun` is an even faster up and coming tool, but is still missing some features to work with Enonic XP server-side code. It receives regular updates, so hopefully we will be able to use it soon.
 
+== Summary
+
+Now that we have a basic understanding of some developer environment concepts, let's start by <<project#,creating a project>>.

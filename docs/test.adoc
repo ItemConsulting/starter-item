@@ -83,3 +83,11 @@ With this setup tests will be executed on every build, but you can also run them
 ----
 ./gradlew test
 ----
+
+== Summary
+
+In the next chapter we will learn how to use the <<result#,result>> to create future projects with everything already setup.
+
+== Additional reading
+
+If you want to learn more about writing tests in TypeScript, you can check out the https://developer.enonic.com/docs/testing-with-jest-and-mock-xp[Testing with Jest and Mock-XP] tutorial.

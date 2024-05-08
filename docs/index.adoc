@@ -1,11 +1,38 @@
 = TypeScript Starter
 :toc: right
 
-How to add TypeScript to an Enonic XP project based on starter-vanilla.
+How to add a `TypeScript development environment` to an `existing Enonic XP project`.
 
-* <<setup#,Setup>>
-* <<concepts#,Concepts>>
-* <<build#,Building>>
-* <<check#,Type checking>>
-* <<lint#,Linting>>
-* <<test#,Testing>>
+== Audience
+
+This tutorial is primarily for people who are already working on an `existing Enonic XP project` and want to start using TypeScript. It may also be helpful for those who already are using TypeScript, but want to `understand and improve` their setup.
+
+If you are starting a `new project` from scratch, you can use the end <<result#,result>>^[7]^ of this tutorial as a starter with everything already setup.
+
+== Introduction
+
+Most projects start with a simple setup and then grow in complexity as more and more features are added. This is where TypeScript can help you keep your codebase clean and maintainable.
+
+Before we start it's a good idea to have a basic understanding of some development environment <<concepts#, concepts>>^[1]^.
+
+Then we will start by <<project#,creating a project>>^[2]^ without any TypeScript support.
+
+Then we will learn how to configure <<build#,building>>^[3]^, <<check#,type-checking>>^[4]^, <<lint#,linting>>^[5]^ and <<test#,testing>>^[7]^ for TypeScript.
+
+Finally we can use the <<result#,result>>^[7]^ to create future projects with everything already setup.
+
+== Chapters:
+
+1. <<concepts#,Concepts>>
+2. <<project#,Create project>>
+3. <<build#,Building>>
+4. <<check#,Type checking>>
+5. <<lint#,Linting>>
+6. <<test#,Testing>>
+7. <<result#,Result>>
+
+== Additional reading
+
+If you want to go into more detail and see some actual code examples, you can check out the https://developer.enonic.com/docs/tsup-starter[Tsup Starter] documentation.
+
+If you want to learn more about writing tests in TypeScript, you can check out the https://developer.enonic.com/docs/testing-with-jest-and-mock-xp[Testing with Jest and Mock-XP] tutorial.

@@ -39,3 +39,7 @@ include::{sourcedir}eslint.config.mjs[]
 ----
 
 Linting will now be executed as a part of the `check` command and, therefore, as a part of the build process.
+
+== Summary
+
+In the next chapter we will learn how to configure <<test#,Testing>> of TypeScript code.
