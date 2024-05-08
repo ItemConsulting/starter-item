@@ -2,31 +2,46 @@
 
 There are currently very few "JavaScript" engines capable of running TypeScript code directly.
 
-This is where TypeScript transpilation comes in.
+This is where TypeScript `transpilation` comes in.
 
 A transpiler is a compilator that converts TypeScript code into JavaScript code. This JavaScript code can then be run by any JavaScript engine.
 
 == Language
 
-Currently, the Enonic XP engine supports `JavaScript 1.9` (2011) with some `ECMAScript 2015` (ES6) features. This is because it runs on the `Nashorn` JavaScript engine inside the JVM (Java Virtual Machine).
+Currently, Enonic XP supports `JavaScript 1.9` (2011) with some `ECMAScript 2015` (ES6) features. This is because it uses the `Nashorn` JavaScript engine inside the JVM (Java Virtual Machine).
 
 TIP: The next major release of Enonic XP is expected to be using `GraalJS` which supports the latest ECMAScript standard, which currently is `ECMAScript 2023`.
 
 == Module format
 
-Enonic XP currently only supports the `CommonJS` module format `version 1`. This is why you have to use `require` and `exports` in your server-side code.
+In JavaScript, a module format is a way to structure your code into reusable, self-contained units called modules. It defines how you:
 
-CommonJS `version 2` uses `module.exports` which Enonic XP currently does not support.
+1. *Export functionality*: Specify which parts of your code (functions, variables, classes) can be used by other code.
+2. *Import functionality*: Access and utilize the exported functionality from other modules in your program.
 
-The new `ECMAScript module` format uses `import` and `export` which Enonic XP currently does not support.
+The *Nashorn JavaScript engine* doesn't support any module formats. It has no concept of modules. It simply interprets JavaScript code "lines".
 
-TIP: The next major release of Enonic XP is expected to support both the CommonJS version 1 and 2 and the new `ECMAScript module` format.
+Enonic XP adds supports for the `CommonJS` module format `version 1`. This is why you can use `require` and `exports` in your server-side code.
 
-TypeScript files are typically written in the `ECMAScript module` format, which is why you have to transpile them to `CommonJS` before running them in Enonic XP.
+[NOTE]
+--
+There are several other module formats:
+
+* *CommonJS (CJS)* `version 2` which uses `require` and `module.exports`.
+* *Asynchronous Module Definition (AMD)*: Designed for asynchronous loading of modules, often used in web development with libraries like RequireJS.
+* *Universal Module Definition (UMD)*: Aims to be compatible with both CommonJS and AMD environments.
+* *ECMAScript Modules (ESM)*: is the new standard for JavaScript modules and uses `import` and `export`.
+
+AMD and UMD are typically used in client-side code, but are quickly being replaced by ESM.
+--
+
+TypeScript files are typically written in the `ECMAScript module` format, which is why (in addition to transpiling the language itself): they have to be `transformed` into to `CommonJS version 1` before they can run in Enonic XP.
+
+TIP: The next major release of Enonic XP is expected to support both CommonJS version 1 and 2 and the new ECMAScript module format. 🎉
 
 == Bundling
 
-In addition to the transpilation of separate TypeScript files, you may want to use code that other people have written. This code is typically distributed as `npm` packages. This is where bundling comes in.
+In addition to the transpilation and transformation of separate TypeScript files, you may want to use code that other people have written. This code is typically distributed as `npm` packages. This is where bundling comes in.
 
 Bundling is the process of combining all the code you need into a single file. Such a `bundle` is known as an `entry point`.
 
@@ -36,7 +51,7 @@ Bundlers are also smart enough to separate shared code into separate bundles, su
 
 == Meta tools
 
-There are a bunch of transpilers and bundlers out there, each of them with their own strengths and weaknesses.
+There are a bunch of transpilers, transformers🤖 and bundlers out there, each of them with their own strengths and weaknesses.
 
 It has been difficult to find a single tool that supports all the required features. Each tool typically only solves a subset of the problem.
 
@@ -51,3 +66,7 @@ TIP: `bun` is an even faster up and coming tool, but is still missing some featu
 == Summary
 
 Now that we have a basic understanding of some developer environment concepts, let's start by <<project#,creating a project>>.
+
+== Additional reading
+
+If you want to go into more detail, you can check out the https://developer.enonic.com/docs/tsup-starter[Tsup Starter] documentation.
