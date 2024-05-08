@@ -15,7 +15,7 @@ npm install --save-dev jest-environment-jsdom ts-node ts-jest
 
 === Jest
 
-In our example we will configure processing of server-side Typescript code, but you can similarly configure client-side code.
+In our example we will configure processing of both client-side and server-side Typescript code.
 
 Create a file called jest.config.js in the root of the project with the following content:
 
@@ -24,18 +24,32 @@ Create a file called jest.config.js in the root of the project with the followin
 include::{sourcedir}jest.config.ts[]
 ----
 
-With this config Jest will find and execute test files in the 'src/main/resources' folder called `*.test.ts` (or `.tsx`) or `*.spec.ts` (or `.tsx`).
+With this config Jest will find and execute test files in the 'src/jest/client' and 'src/jest/server' folders called `*.test.ts` (or `.tsx`) or `*.spec.ts` (or `.tsx`).
 
-Set up `src/jest/server` folder structure and create two files inside:
+Set up `src/jest` folder structure with thess files inside:
 
+.src/jest/client/tsconfig.json
+[source, JSON]
+----
+include::{sourcedir}src/jest/client/tsconfig.json[]
+----
+
+.src/jest/server/global.d.ts
 [source, TypeScript]
 ----
 include::{sourcedir}src/jest/server/global.d.ts[]
 ----
 
+.src/jest/server/setupFile.ts
 [source, TypeScript]
 ----
 include::{sourcedir}src/jest/server/setupFile.ts[]
+----
+
+.src/jest/server/tsconfig.json
+[source, JSON]
+----
+include::{sourcedir}src/jest/server/tsconfig.json[]
 ----
 
 === package.json
