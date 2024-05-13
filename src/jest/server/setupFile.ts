@@ -1,4 +1,4 @@
-import type {App, Log} from './global';
+import type {App, Log} from './global.d';
 
 
 // Avoid type errors
