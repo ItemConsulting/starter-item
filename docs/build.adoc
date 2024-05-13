@@ -122,10 +122,10 @@ include::{sourcedir}tsup/index.d.ts[]
 include::{sourcedir}tsup/constants.ts[]
 ----
 
-.tsup/client-asset.ts
+.tsup/client.ts
 [source, Typescript]
 ----
-include::{sourcedir}tsup/client-asset.ts[]
+include::{sourcedir}tsup/client.ts[]
 ----
 
 .tsup/server.ts
