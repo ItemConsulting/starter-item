@@ -1,13 +1,11 @@
 = TypeScript Starter
 :toc: right
 
-How to add a `TypeScript development environment` to an `existing Enonic XP project`.
-
 == Audience
 
-This tutorial is primarily for people who are already working on an `existing Enonic XP project` and want to start using TypeScript. It may also be helpful for those who already are using TypeScript, but want to `understand and improve` their setup.
+This tutorial is primarily for developers who are already working on an _existing_ Enonic XP project and want to start using TypeScript. It may also be helpful for those who already are using TypeScript, but want to _understand_ and _improve_ their setup.
 
-If you are starting a `new project` from scratch, you can use the end <<result#,result>>^[7]^ of this tutorial as a starter with everything already setup.
+If you are starting a _new_ project from scratch, you can use the end <<result#,result>>^[7]^ of this tutorial as a starter with proper configuration already in place.
 
 == Introduction
 
@@ -19,7 +17,7 @@ Then we will start by <<project#,creating a project>>^[2]^ without any TypeScrip
 
 Then we will learn how to configure <<build#,building>>^[3]^, <<check#,type-checking>>^[4]^, <<lint#,linting>>^[5]^ and <<test#,testing>>^[7]^ for TypeScript.
 
-Finally we can use the <<result#,result>>^[7]^ to create future projects with everything already setup.
+Finally, we can use the <<result#,result>>^[7]^ to create future projects with proper configuration already in place.
 
 == Chapters:
 
@@ -33,6 +31,6 @@ Finally we can use the <<result#,result>>^[7]^ to create future projects with ev
 
 == Additional reading
 
-If you want to go into more detail and see some actual code examples, you can check out the https://developer.enonic.com/docs/tsup-starter[Tsup Starter] documentation.
+If you want to go into more details and see some actual code examples, you can check out the https://developer.enonic.com/docs/tsup-starter[Tsup Starter] documentation.
 
-If you want to learn more about writing tests in TypeScript, you can check out the https://developer.enonic.com/docs/testing-with-jest-and-mock-xp[Testing with Jest and Mock-XP] tutorial.
+If you want to learn more about writing tests in TypeScript, you can check out the https://developer.enonic.com/docs/testing-with-jest-and-mock-xp[Testing with Jest and Mock XP] tutorial.
