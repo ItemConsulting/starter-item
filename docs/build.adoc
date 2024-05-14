@@ -209,6 +209,6 @@ processResources {
 
 This will make sure that assembled jar file contains only required assets and none of the original source TypeScript files.
 
-== Summary
+== Navigation
 
 In the next chapter we will learn how to configure <<check#,Type checking>>.

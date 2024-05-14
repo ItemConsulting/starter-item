@@ -6,7 +6,21 @@
     },
     {
         "title": "1 - Concepts",
-        "document": "concepts"
+        "document": "concepts/index",
+        "menuItems": [
+          {
+            "title": "1.1 - Environments",
+            "document": "concepts/environments"
+          },
+          {
+            "title": "1.2 - Source processing",
+            "document": "concepts/sourceProcessing"
+          },
+          {
+            "title": "1.3 Globals",
+            "document": "concepts/globals"
+          }
+        ]
     },
     {
       "title": "2 - Create project",

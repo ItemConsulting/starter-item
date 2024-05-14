@@ -40,6 +40,8 @@ include::{sourcedir}src/jest/client/tsconfig.json[]
 include::{sourcedir}src/jest/server/global.d.ts[]
 ----
 
+This Jest setupFile is used to mock the XP Framework <<concepts/globals#,Globals>> into the server-side test environment:
+
 .src/jest/server/setupFile.ts
 [source, TypeScript]
 ----
@@ -98,10 +100,10 @@ With this setup tests will be executed on every build, but you can also run them
 ./gradlew test
 ----
 
-== Summary
-
-In the next chapter we will learn how to use the <<result#,result>> to create future projects with everything already setup.
-
 == Additional reading
 
 If you want to learn more about writing tests in TypeScript, you can check out the https://developer.enonic.com/docs/testing-with-jest-and-mock-xp[Testing with Jest and Mock-XP] tutorial.
+
+== Navigation
+
+In the next chapter we will learn how to use the <<result#,result>> to create future projects with everything already setup.
