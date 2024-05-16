@@ -3,7 +3,18 @@
 
 In this chapter we will learn how to set up transpilation of Typescript code - both client- and server-side - to JavaScript.
 
-== Install
+
+== Create project
+
+We start this tutorial with the most basic setup possible, a vanilla XP project:
+
+[source, Terminal]
+----
+enonic create myproject -r starter-vanilla
+----
+
+
+== NPM modules
 
 === Types
 
@@ -209,6 +220,7 @@ processResources {
 
 This will make sure that assembled jar file contains only required assets and none of the original source TypeScript files.
 
-== Navigation
+== Summary
 
-In the next chapter we will learn how to configure <<check#,Type checking>>.
+You should now be able to perform basic builds that transpile TypeScript code to JavaScript.
+In the next chapter we'll have a look at <<check#,Type checking>>.

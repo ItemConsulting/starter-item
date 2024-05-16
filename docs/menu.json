@@ -1,50 +1,24 @@
 {
   "menuItems": [
     {
-      "title": "Introduction",
-      "document": "index"
+      "title": "1 - Concepts",
+      "document": "concepts"
     },
     {
-        "title": "1 - Concepts",
-        "document": "concepts/index",
-        "menuItems": [
-          {
-            "title": "1.1 - Environments",
-            "document": "concepts/environments"
-          },
-          {
-            "title": "1.2 - Source processing",
-            "document": "concepts/sourceProcessing"
-          },
-          {
-            "title": "1.3 Globals",
-            "document": "concepts/globals"
-          }
-        ]
-    },
-    {
-      "title": "2 - Create project",
-      "document": "project"
-    },
-    {
-        "title": "3 - Building",
+        "title": "2 - Build system",
         "document": "build"
     },
     {
-      "title": "4 - Type checking",
+      "title": "3 - Type checking",
       "document": "check"
     },
     {
-      "title": "5 - Linting",
+      "title": "4 - Linting",
       "document": "lint"
     },
     {
-      "title": "6 - Testing",
+      "title": "5 - Testing",
       "document": "test"
-    },
-    {
-      "title": "7 - Result",
-      "document": "result"
     }
   ]
 }

@@ -1,7 +1,9 @@
 = Linting
 :sourcedir: ../
 
-ESLint is a static code analysis tool for identifying problematic patterns found in JavaScript code. It is highly configurable and can be used to enforce a consistent coding style. Having linting as a part of the build process is considered a good practice.
+ESLint is a static code analysis tool for identifying problematic patterns found in JavaScript code. 
+
+ESlint is highly configurable and can be used to enforce a consistent coding style. Having linting as a part of the build process is considered a good practice.
 
 == Install
 
@@ -40,6 +42,7 @@ include::{sourcedir}eslint.config.mjs[]
 
 Linting will now be executed as a part of the `check` command and, therefore, as a part of the build process.
 
-== Navigation
+== Summary
 
-In the next chapter we will learn how to configure <<test#,Testing>> of TypeScript code.
+Now, you have activated linting - and only one step remains.
+Prepare your project for <<test#,testing>>.

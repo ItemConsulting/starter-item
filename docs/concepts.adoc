@@ -1,0 +1,99 @@
+= Concepts
+To establish a common ground, we introduce some basic concepts
+
+== Environments
+
+There are multiple `environments` to consider:
+
+* *Build*: The environment in which <<sourceProcessing#,Source processing>> tools run.
+* *Test*: The environment in which tests run.
+* *Run*: The environment in which the built application runs.
+
+In addition the *Test* and *Run* environments can be further divided into:
+
+* *Client*: The environment in which the client-side of the application (or tests) runs.
+* *Server*: The environment in which the server-side of the application (or tests) runs.
+
+All these environments support *different features*, and consequently also has *differing limitations*.
+
+Typically a test environment is more limited than the run environment, and in order to write useful tests, some runtime features must be simulated.
+
+== Globals
+
+When programming in Javascript there is always a global scope. Depending on which Javascript engine/environment you are in, the global scope is different.
+
+TIP: Useful reading: https://developer.mozilla.org/en-US/docs/Glossary/Global_object[Global object^]
+
+=== Browser
+
+In the browser, the global scope is the `window` object. The `window` object contains the `document` object that represents the current web page. The `document` object contains functions and properties that allow you to inspect and manipulate the web page.
+
+=== XP Framework
+
+In the Enonic XP Framework the global scope contains a bunch of objects and functions that are useful when developing applications.
+
+TIP: You can read about them https://developer.enonic.com/docs/xp/stable/framework/globals[here^].
+
+== Transpiling
+
+There are currently very few "JavaScript" engines capable of running TypeScript code directly. This is where TypeScript `transpilation` comes in.
+
+A transpiler is a compilator that converts TypeScript code into JavaScript code. This JavaScript code can then be run by any JavaScript engine. Enonic XP 7.x supports `JavaScript 1.9` (2011) with some `ECMAScript 2015` (ES6) features. This is because the code is executed by the `Nashorn` JavaScript engine.
+
+The TypeScript transpiler will automatically convert your TypeScript code into JS code that works with Enonic XP.
+
+TIP: The next major release of Enonic XP is expected to be using `GraalJS` which supports the latest ECMAScript standard, which currently is `ECMAScript 2023`.
+
+== Module format
+
+In JavaScript, a module is a way to structure your code into reusable, self-contained units called modules. It defines how you:
+
+1. *Export functionality*: Specify which parts of your code (functions, variables, classes) can be used by other code.
+2. *Import functionality*: Access and utilize the exported functionality from other modules in your program.
+
+The *Nashorn JavaScript engine* doesn't support any module formats. It has no concept of modules. It simply interprets JavaScript code "lines".
+
+Enonic XP adds supports for the `CommonJS` module format `version 1`. This is why you can use `require` and `exports` in your server-side code.
+
+[NOTE]
+--
+There are several other module formats:
+
+* *CommonJS (CJS)* `version 2` which uses `require` and `module.exports`.
+* *Asynchronous Module Definition (AMD)*: Designed for asynchronous loading of modules, often used in web development with libraries like RequireJS.
+* *Universal Module Definition (UMD)*: Aims to be compatible with both CommonJS and AMD environments.
+* *ECMAScript Modules (ESM)*: is the new standard for JavaScript modules and uses `import` and `export`.
+
+AMD and UMD are typically used in client-side code, but are quickly being replaced by ESM.
+--
+
+TypeScript files are typically written in the `ECMAScript module` format, which is why (in addition to transpiling the language itself): they have to be `transformed` into to `CommonJS version 1` before they can run in Enonic XP.
+
+TIP: The next major release of Enonic XP is expected to support both CommonJS version 1 and 2 and the new ECMAScript module format. 🎉
+
+== Bundling
+
+In addition to the transpilation and transformation of separate TypeScript files, you may want to use code that other people have written. This code is typically distributed as `npm` packages. This is where bundling comes in.
+
+Bundling is the process of combining all the code you need into a single file. Such a `bundle` is known as an `entry point`.
+
+In a project you may want to have `multiple entry points`, each representing a different part of your application.
+
+Bundlers are also smart enough to separate shared code into separate bundles, such bundles are known as `chunks`.
+
+== Tsup
+
+There are a bunch of transpilers, transformers🤖 and bundlers out there, each of them with their own strengths and weaknesses.
+
+It has been difficult to find a single tool that supports all the required features. Each tool typically only solves a subset of the problem.
+
+This is where `meta-tools` come in. Meta-tools are tools that combine multiple tools to solve a larger problem. For many years `Webpack` has been the most common tool for working with JavaScript code. It is very powerful and flexible, but also very complex and difficult to configure. In addition, it is not very fast.
+
+Recently `TSup` appeared on the scene. TSup is a simple and fast tool that is specifically designed for TypeScript code. It is easy to use and configure. It also has all the features you need to work with server-side code in Enonic XP. This setup will be using 
+
+TIP: `bun` is an even faster up and upcoming tool, but is still missing some features to work with Enonic XP server-side code. It receives regular updates, so hopefully we will be able to use it soon.
+
+== Summary
+
+The fundamental concepts should now be established.
+Moving forward, let's create a project and <<setup#, the build system>>.

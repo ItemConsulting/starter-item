@@ -104,6 +104,12 @@ With this setup tests will be executed on every build, but you can also run them
 
 If you want to learn more about writing tests in TypeScript, you can check out the https://developer.enonic.com/docs/testing-with-jest-and-mock-xp[Testing with Jest and Mock-XP] tutorial.
 
-== Navigation
+== Summary
 
-In the next chapter we will learn how to use the <<result#,result>> to create future projects with everything already setup.
+With testing enabled, you have reached the end of this tutorial.
+
+TIP: The https://market.enonic.com/vendors/enonic/ts-starter[TypeScript Starter] is basically the end result of this tutorial, so when creating your next project - simply run `enonic project create -r starter-ts` to get a best practice development setup, just like that!
+
+Enjoy! 
+
+- The Enonic team

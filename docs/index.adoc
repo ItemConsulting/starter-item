@@ -1,43 +1,24 @@
-= TypeScript Starter
+= Using TypeScript
 :toc: right
 
-== Audience
+This tutorial explains the steps involved in adapting your Enonic app to a best-practice TypeScript build setup - matching that of the https://market.enonic.com/vendors/enonic/ts-starter[TypeScript starter]
 
-This tutorial is primarily for developers who are already working on an _existing_ Enonic XP project and want to start using TypeScript. It may also be helpful for those who already are using TypeScript, but want to _understand_ and _improve_ their setup.
-
-If you are starting a _new_ project from scratch, you can use the end <<result#,result>> of this tutorial as a starter with proper configuration already in place.
+TIP: Starting a new project? Get all the good stuff explained in this tutorial by running `enonic project create -r starter-ts`.
 
 == Introduction
 
-Most projects start with a simple setup and then grow in complexity as more and more features are added. This is where TypeScript can help you keep your codebase clean and maintainable.
+This tutorial is aimed at existing Enonic projects, based on JavaScript, or using an older TypeScript setup.
 
-Before we start it's a good idea to have a basic understanding of some development environment <<concepts/index#, concepts>>.
+Most projects start with a simple setup and then grow in complexity as more and more features are added. TypeScript can help keep your codebase clean and maintainable.
 
-Then we will start by <<project#,creating a project>> without any TypeScript support.
+The tutorial covers:
 
-Then we will learn how to configure <<build#,building>>, <<check#,type-checking>>, <<lint#,linting>> and <<test#,testing>> for TypeScript.
+* Essential <<concepts#, concepts>>
+* Setting up the <<build#,Build system>>
+* How to enable <<check#,Type checking>>
+* Activating <<lint#,Linting>>
+* Preparing for <<test#,Testing>>
 
-Finally, we can use the <<result#,result>> to create future projects with proper configuration already in place.
+For some actual TypeScript code examples, check out the https://developer.enonic.com/docs/tsup-starter[Tsup] documentation.
 
-== Contents:
-
-1. <<concepts/index#,Concepts>>
-+
-1.1. <<concepts/environments#,Environments>>
-+
-1.2. <<concepts/sourceProcessing#,Source processing>>
-+
-1.3. <<concepts/globals#,Globals>>
-+
-2. <<project#,Create project>>
-3. <<build#,Building>>
-4. <<check#,Type checking>>
-5. <<lint#,Linting>>
-6. <<test#,Testing>>
-7. <<result#,Result>>
-
-== Additional reading
-
-If you want to go into more details and see some actual code examples, you can check out the https://developer.enonic.com/docs/tsup-starter[Tsup Starter] documentation.
-
-If you want to learn more about writing tests in TypeScript, you can check out the https://developer.enonic.com/docs/testing-with-jest-and-mock-xp[Testing with Jest and Mock XP] tutorial.
+TIP: If you want to learn more about writing tests in TypeScript, you can check out the https://developer.enonic.com/docs/testing-with-jest-and-mock-xp[Testing with Jest and Mock XP] tutorial.
