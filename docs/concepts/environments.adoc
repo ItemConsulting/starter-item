@@ -1,0 +1,22 @@
+= Environments
+
+There are multiple `environments` to consider:
+
+* *Build*: The environment in which <<sourceProcessing#,Source processing>> tools run.
+* *Test*: The environment in which tests run.
+* *Run*: The environment in which the built application runs.
+
+In addition the *Test* and *Run* environments can be further divided into:
+
+* *Client*: The environment in which the client-side of the application (or tests) runs.
+* *Server*: The environment in which the server-side of the application (or tests) runs.
+
+All these environments support *different features*, and consequently also has *differing limitations*.
+
+Typically a test environment is more limited than the run environment, and in order to write useful tests, some runtime features must be simulated.
+
+One such feature to consider are <<globals#,Globals>>.
+
+== Navigation
+
+Continue reading about <<sourceProcessing#,Source processing>>.

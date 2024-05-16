@@ -9,6 +9,6 @@ We start this tutorial with the most basic setup possible, a vanilla XP project:
 enonic create myproject -r starter-vanilla
 ----
 
-== Summary
+== Navigation
 
 In the next chapter we will learn how to configure <<build#,Transpilation and Bundling>> of TypeScript code.

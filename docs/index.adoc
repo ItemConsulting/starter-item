@@ -5,23 +5,30 @@
 
 This tutorial is primarily for developers who are already working on an _existing_ Enonic XP project and want to start using TypeScript. It may also be helpful for those who already are using TypeScript, but want to _understand_ and _improve_ their setup.
 
-If you are starting a _new_ project from scratch, you can use the end <<result#,result>>^[7]^ of this tutorial as a starter with proper configuration already in place.
+If you are starting a _new_ project from scratch, you can use the end <<result#,result>> of this tutorial as a starter with proper configuration already in place.
 
 == Introduction
 
 Most projects start with a simple setup and then grow in complexity as more and more features are added. This is where TypeScript can help you keep your codebase clean and maintainable.
 
-Before we start it's a good idea to have a basic understanding of some development environment <<concepts#, concepts>>^[1]^.
+Before we start it's a good idea to have a basic understanding of some development environment <<concepts/index#, concepts>>.
 
-Then we will start by <<project#,creating a project>>^[2]^ without any TypeScript support.
+Then we will start by <<project#,creating a project>> without any TypeScript support.
 
-Then we will learn how to configure <<build#,building>>^[3]^, <<check#,type-checking>>^[4]^, <<lint#,linting>>^[5]^ and <<test#,testing>>^[7]^ for TypeScript.
+Then we will learn how to configure <<build#,building>>, <<check#,type-checking>>, <<lint#,linting>> and <<test#,testing>> for TypeScript.
 
-Finally, we can use the <<result#,result>>^[7]^ to create future projects with proper configuration already in place.
+Finally, we can use the <<result#,result>> to create future projects with proper configuration already in place.
 
-== Chapters:
+== Contents:
 
-1. <<concepts#,Concepts>>
+1. <<concepts/index#,Concepts>>
++
+1.1. <<concepts/environments#,Environments>>
++
+1.2. <<concepts/sourceProcessing#,Source processing>>
++
+1.3. <<concepts/globals#,Globals>>
++
 2. <<project#,Create project>>
 3. <<build#,Building>>
 4. <<check#,Type checking>>
