@@ -1,7 +1,9 @@
 = Testing
 :sourcedir: ../
 
-If you are writing Typescript code, chances are you want to write tests for that code, and you want to write them in Typescript. Here's how to configure test runs in your application. In our example we will configure Jest, a JavaScript testing framework designed to ensure correctness of your JavaScript codebase.
+Setting up Jest, a JavaScript testing framework designed to ensure correctness of your JavaScript codebase.
+
+If you are writing Typescript code, chances are you want to write tests for that code, and you want to write them in Typescript. Here's how to configure test runs in your application.
 
 == Install
 
@@ -40,7 +42,7 @@ include::{sourcedir}src/jest/client/tsconfig.json[]
 include::{sourcedir}src/jest/server/global.d.ts[]
 ----
 
-This Jest setupFile is used to mock the XP Framework <<concepts/globals#,Globals>> into the server-side test environment:
+This Jest setupFile is used to mock the XP Framework, injecting standard Globals into the server-side test environment:
 
 .src/jest/server/setupFile.ts
 [source, TypeScript]
@@ -100,9 +102,7 @@ With this setup tests will be executed on every build, but you can also run them
 ./gradlew test
 ----
 
-== Additional reading
-
-If you want to learn more about writing tests in TypeScript, you can check out the https://developer.enonic.com/docs/testing-with-jest-and-mock-xp[Testing with Jest and Mock-XP] tutorial.
+TIP: If you want to learn more about writing tests for your Enonic project, check out the https://developer.enonic.com/docs/testing-with-jest-and-mock-xp[Testing with Jest and Mock-XP] tutorial.
 
 == Summary
 

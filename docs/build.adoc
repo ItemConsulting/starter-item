@@ -67,7 +67,7 @@ include::{sourcedir}tsup/anyServerFiles.js[]
 
 === package.json
 
-Add the following scripts to the `package.json` file (the first script concurrently executes the other two):
+Add the following scripts to the package.json file (the first script concurrently executes the other two):
 
 [source, JSON]
 ----
