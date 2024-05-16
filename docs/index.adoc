@@ -1,15 +1,19 @@
-= Using TypeScript
+= TypeScript best practices
 :toc: right
 
-This tutorial explains the steps involved in adapting your Enonic app to a best-practice TypeScript build setup - matching that of the https://market.enonic.com/vendors/enonic/ts-starter[TypeScript starter]
+Take advantage of our best-practice TypeScript - aka the https://market.enonic.com/vendors/enonic/ts-starter[TypeScript Starter]
 
-TIP: Starting a new project? Get all the good stuff explained in this tutorial by running `enonic project create -r starter-ts`.
+
+== TL;DR
+Start using the https://market.enonic.com/vendors/enonic/ts-starter[TypeScript Starter] by running `enonic project create -r starter-ts`.
+
+TIP: Extensive TypeScript code examples can be found in the https://developer.enonic.com/docs/tsup-starter[Tsup examples documentation].
 
 == Introduction
 
-This tutorial is aimed at existing Enonic projects, based on JavaScript, or using an older TypeScript setup.
-
 Most projects start with a simple setup and then grow in complexity as more and more features are added. TypeScript can help keep your codebase clean and maintainable.
+
+This tutorial is aimed at developers that want to understand how the TypeScript starter was created, and/or want to make use of the same setup in an existing Enonic project. 
 
 The tutorial covers:
 
@@ -19,6 +23,6 @@ The tutorial covers:
 * Activating <<lint#,Linting>>
 * Preparing for <<test#,Testing>>
 
-For some actual TypeScript code examples, check out the https://developer.enonic.com/docs/tsup-starter[Tsup] documentation.
+
 
 TIP: If you want to learn more about writing tests in TypeScript, you can check out the https://developer.enonic.com/docs/testing-with-jest-and-mock-xp[Testing with Jest and Mock XP] tutorial.
