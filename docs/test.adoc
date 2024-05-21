@@ -108,8 +108,8 @@ TIP: If you want to learn more about writing tests for your Enonic project, chec
 
 With testing enabled, you have reached the end of this tutorial.
 
-TIP: The https://market.enonic.com/vendors/enonic/ts-starter[TypeScript Starter] is basically the end result of this tutorial, so when creating your next project - simply run `enonic project create -r starter-ts` to get a best practice development setup, just like that!
+TIP: The https://market.enonic.com/vendors/enonic/starter-typescript[TypeScript Starter] is basically the end result of this tutorial, so when creating your next project - simply run `enonic project create -r starter-ts` to get a best practice development setup, just like that!
 
-Enjoy! 
+Enjoy!
 
 - The Enonic team

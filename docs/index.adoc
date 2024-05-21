@@ -1,11 +1,11 @@
 = TypeScript Starter and best practices
 :toc: right
 
-Take advantage of our development best-practice via the https://market.enonic.com/vendors/enonic/ts-starter[TypeScript Starter]
+Take advantage of our development best-practice via the https://market.enonic.com/vendors/enonic/starter-typescript[TypeScript Starter]
 
 
 == TL;DR
-For new Enonic apps, simply run `enonic project create -r starter-ts`. 
+For new Enonic apps, simply run `enonic project create -r starter-ts`.
 
 TIP: Extensive TypeScript code examples can be found in the https://developer.enonic.com/docs/tsup-starter[Tsup examples documentation].
 
@@ -13,7 +13,7 @@ TIP: Extensive TypeScript code examples can be found in the https://developer.en
 
 Most projects start with a simple setup and then grow in complexity as more and more features are added. TypeScript can help keep your codebase clean and maintainable.
 
-This tutorial is aimed at developers that want to understand how the TypeScript starter was created, and/or want to make use of the same setup in an existing Enonic project. 
+This tutorial is aimed at developers that want to understand how the TypeScript starter was created, and/or want to make use of the same setup in an existing Enonic project.
 
 The tutorial covers:
 
