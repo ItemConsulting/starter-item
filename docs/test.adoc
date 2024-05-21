@@ -112,4 +112,4 @@ TIP: The https://market.enonic.com/vendors/enonic/starter-typescript[TypeScript 
 
 Enjoy!
 
-- The Enonic team
++-+ With [red]#♥# from the Enonic team
