@@ -20,7 +20,7 @@
     "@enonic-types/lib-scheduler": "^7.14.1",
     "@enonic-types/lib-task": "^7.14.1",
     "@enonic-types/lib-value": "^7.14.1",
-    "@enonic-types/lib-websocket": "^7.14.1",
+    "@enonic-types/lib-websocket": "^7.14.2",
     "@eslint/js": "^9.3.0",
     "@swc/core": "^1.5.24",
     "@types/node": "^20.12.13",
