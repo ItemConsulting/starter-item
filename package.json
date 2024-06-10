@@ -12,7 +12,7 @@
     "@enonic-types/lib-export": "^7.14.2",
     "@enonic-types/lib-i18n": "^7.14.2",
     "@enonic-types/lib-io": "^7.14.2",
-    "@enonic-types/lib-mail": "^7.14.1",
+    "@enonic-types/lib-mail": "^7.14.2",
     "@enonic-types/lib-node": "^7.14.2",
     "@enonic-types/lib-portal": "^7.14.2",
     "@enonic-types/lib-project": "^7.14.2",
