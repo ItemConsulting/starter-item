@@ -12,6 +12,9 @@
   ],
 
   "compilerOptions": {
+    // Import CommonJS modules in compliance with es6 modules spec
+    "esModuleInterop": true,
+
     // A series of entries which re-map imports to lookup locations relative
     // to the baseUrl if set, or to the tsconfig file itself otherwise.
     "paths": {
