@@ -145,6 +145,7 @@ tasks.register('npmTest', NpmTask) {
 	]
   inputs.dir 'src/jest'
   outputs.dir 'coverage'
+  outputs.upToDateWhen { false }
 }
 
 test.dependsOn npmTest
