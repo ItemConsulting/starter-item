@@ -12,8 +12,6 @@ app {
 }
 
 dependencies {
-  implementation "com.enonic.xp:core-api:${xpVersion}"
-  implementation "com.enonic.xp:portal-api:${xpVersion}"
 
   // ─────────────────────────────────────────────────────────────────────────
   // https://repo.enonic.com/service/rest/repository/browse/public/com/enonic/xp/
@@ -117,6 +115,7 @@ tasks.register('npmBuild', NpmTask) {
   ]
   inputs.dir 'src/main/resources'
   outputs.dir 'build/resources/main'
+  outputs.upToDateWhen { false }
 }
 
 jar.dependsOn npmBuild
