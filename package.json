@@ -22,7 +22,7 @@
     "@enonic-types/lib-value": "^7.14.3",
     "@enonic-types/lib-websocket": "^7.14.3",
     "@eslint/js": "^9.6.0",
-    "@swc/core": "^1.6.6",
+    "@swc/core": "^1.6.13",
     "@types/node": "^20.14.10",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
