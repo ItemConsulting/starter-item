@@ -1,0 +1,24 @@
+:root {
+  /* Containers */
+  --blocks-container-sm: 676px;
+  --blocks-container-md: 778px;
+  --blocks-container-lg: 940px;
+
+  /* Spacing mobile */
+  --blocks-spacing-sm: var(--margin-10);
+  --blocks-spacing-md: var(--margin-10);
+  --blocks-spacing-lg: var(--margin-20);
+  --blocks-spacing-xl: var(--margin-40);
+  --blocks-spacing-xxl: var(--margin-40);
+}
+
+@media (width > 620px) {
+  :root {
+    /* Spacing desktop */
+    --blocks-spacing-sm: var(--spacing-10);
+    --blocks-spacing-md: var(--spacing-20);
+    --blocks-spacing-lg: var(--spacing-40);
+    --blocks-spacing-xl: var(--spacing-60);
+    --blocks-spacing-xxl: var(--spacing-80);
+  }
+}

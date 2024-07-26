@@ -11,7 +11,7 @@
   height: var(--icon-height, var(--icon-size, 1em));
   background-color: var(--icon-color, var(--color-primary));
 
-  --icon-margin: var(--margin-xs);
+  --icon-margin: var(--margin-10);
 }
 
 .icon {

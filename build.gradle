@@ -58,6 +58,7 @@ dependencies {
   include 'com.github.tineikt:xp-lib-freemarker:2.0.3'
   include "com.enonic.lib:lib-http-client:3.2.2"
   include 'no.item:lib-xp-time:1.0.2'
+  include 'no.item:lib-xp-item-blocks:0.0.2-SNAPSHOT'
 
   webjar "org.webjars.npm:hotwired__turbo:8.0.4"
 }

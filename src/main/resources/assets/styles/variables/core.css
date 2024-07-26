@@ -9,14 +9,14 @@
   --color-turquoise: #0AFFD2;
 
   /* Spacing */
-  --spacing-xxs: 0.3125rem; /*  5px */
-  --spacing-xs: 0.625rem; /*  10px */
-  --spacing-s: 1.25rem; /* 20px */
-  --spacing-m: 2.5rem; /* 40px */
-  --spacing-l: 3.75rem; /* 60px */
-  --spacing-xl: 5rem; /* 80px */
-  --spacing-xxl: 7.5rem; /* 120px */
-  --spacing-xxxl: 12.5rem; /* 200px */
+  --spacing-05: 5px;
+  --spacing-10: 10px;
+  --spacing-20: 20px;
+  --spacing-40: 40px;
+  --spacing-60: 60px;
+  --spacing-80: 80px;
+  --spacing-120: 120px;
+  --spacing-200: 200px;
 
   /* Container widths */
   --container-sm: 75ch;

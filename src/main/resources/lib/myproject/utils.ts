@@ -1,5 +1,13 @@
-export function partPathToId(partPath: string): string {
-  return partPath.substring(1).replace(/\//g, "-");
+/**
+ * Returns an id generated from the part path.
+ * @param {string | undefined} partPath The parts path. Needs to support undefined because of Fragments.
+ */
+export function partPathToId(partPath: string | undefined): string {
+  return partPath ? partPath.substring(1).replace(/\//g, "-") : generateId();
+}
+
+export function generateId(): string {
+  return Date.now().toString(36) + Math.random().toString(36).substring(2);
 }
 
 export function notNullOrUndefined<T>(val: T | null | undefined): val is T {

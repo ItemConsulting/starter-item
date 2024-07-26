@@ -13,5 +13,7 @@
         <mixin name="intro" />
       </items>
     </field-set>
+
+    <mixin name="blocks" />
   </form>
 </content-type>

@@ -19,10 +19,12 @@
   <meta name="view-transition" content="same-origin" />
   <meta name="theme-color" content="${themeColor}" />
   <link href="[@assetUrl path='styles/bundle.css'/]" rel="stylesheet">
+  <link href="[@assetUrl path='styles/blocks.min.css'/]" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="16x16" href="[@assetUrl path='images/favicon.svg'/]"/>
   <link rel="shortcut icon" data-th-href="[@assetUrl path='images/favicon.ico'/]"/>
 
   <script type="module" src="[@assetUrl path='hotwired__turbo/8.0.4/dist/turbo.es2017-esm.js'/]"></script>
+  <script type="module" src="[@assetUrl path='blocks.mjs'/]"></script>
   <script type="module" src="[@assetUrl path='main.mjs'/]" data-turbo-track="reload"></script>
 
   <title>${displayName}</title>
