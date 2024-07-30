@@ -104,6 +104,7 @@ export default function buildServerConfig(): Options {
       "/lib/text-encoding",
       "/lib/http-client",
       "/lib/menu",
+      /^\/site\/mixins\/blocks\//,
       /^\/lib\/xp\//,
     ],
     format: "cjs",
