@@ -26,7 +26,7 @@ export function get(): XP.Response {
       ? part.config.blocks ?? (getSite()?.x[app.name.replace(/\./g, "-")]?.frontpage?.blocks as BlocksMixin["blocks"])
       : part.config.blocks;
 
-  const blocks = process(
+  const processedBlocks = process(
     {
       blocks: forceArray(blocksInComponent ? blocksInComponent : content.data.blocks),
       gapRow: part.config.gapRow,
@@ -39,8 +39,7 @@ export function get(): XP.Response {
 
   return {
     body: render<FreemarkerParams>(view, {
-      title: part.config.blockTitle,
-      blocks,
+      processedBlocks,
     }),
   };
 }

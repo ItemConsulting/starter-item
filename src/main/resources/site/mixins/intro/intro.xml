@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mixin xmlns="urn:enonic:xp:model:1.0">
-  <display-name i18n="common.intro">Intro</display-name>
+  <display-name i18n="mixin.intro.displayName">Intro</display-name>
 
   <form>
     <input name="intro" type="HtmlArea">
-      <label i18n="common.intro">Intro</label>
+      <label i18n="mixin.intro.intro">Intro</label>
       <occurrences minimum="0" maximum="1"/>
       <config>
         <exclude>*</exclude>

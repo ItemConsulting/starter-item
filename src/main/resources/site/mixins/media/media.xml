@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <mixin xmlns="urn:enonic:xp:model:1.0">
-  <display-name i18n="mediaMixin.displayName">Media</display-name>
+  <display-name i18n="mixin.media.displayName">Media</display-name>
 
   <form>
     <option-set name="media">
-      <label i18n="mediaMixin.image">Image</label>
+      <label i18n="mixin.media.image">Image</label>
       <occurrences minimum="1" maximum="1"/>
 
       <options minimum="1" maximum="1">
         <option name="withAltText">
-          <label i18n="mediaMixin.withAltText">Normal image</label>
-          <help-text i18n="mediaMixin.withAltTextHelpText">Image that is part of the content on the page</help-text>
+          <label i18n="mixin.media.withAltText">Normal image (with alt-text)</label>
+          <help-text i18n="mixin.media.withAltTextHelpText">Image that is part of the content on the page</help-text>
           <items>
             <input name="image" type="ImageSelector">
-              <label i18n="mediaMixin.image">Image</label>
+              <label i18n="mixin.media.image">Image</label>
               <occurrences minimum="1" maximum="1"/>
             </input>
 
             <input name="altText" type="TextLine">
-              <label i18n="mediaMixin.altText">Description of the image for visually impaired users (alt text)</label>
-              <help-text i18n="mediaMixin.altTextHelpText">Describe the image in the context of the article</help-text>
+              <label i18n="mixin.media.altText">Description of the image for visually impaired users (alt text)</label>
+              <help-text i18n="mixin.media.altTextHelpText">Describe the image in the context of the article</help-text>
               <occurrences minimum="1" maximum="1"/>
             </input>
 
             <input name="caption" type="TextLine">
-              <label i18n="mediaMixin.caption">Caption</label>
+              <label i18n="mixin.media.caption">Caption</label>
               <occurrences minimum="0" maximum="1"/>
             </input>
           </items>
@@ -32,24 +32,24 @@
         </option>
 
         <option name="withoutAltText">
-          <label i18n="mediaMixin.withoutAltText">Decorative image</label>
-          <help-text i18n="mediaMixin.withoutAltTextHelpText">Image that is pure decoration</help-text>
+          <label i18n="mixin.media.withoutAltText">Decorative image (no alt-text)</label>
+          <help-text i18n="mixin.media.withoutAltTextHelpText">An image that is pure decoration</help-text>
           <items>
             <input name="image" type="ImageSelector">
-              <label i18n="mediaMixin.image">Image</label>
+              <label i18n="mixin.media.image">Image</label>
               <occurrences minimum="1" maximum="1"/>
             </input>
 
             <input name="caption" type="TextLine">
-              <label i18n="mediaMixin.caption">Caption</label>
+              <label i18n="mixin.media.caption">Caption</label>
               <occurrences minimum="0" maximum="1"/>
             </input>
           </items>
         </option>
 
         <option name="none">
-          <label i18n="mediaMixin.none">No image</label>
-          <help-text i18n="mediaMixin.noneHelpText">Don't display an image</help-text>
+          <label i18n="mixin.media.none">No image</label>
+          <help-text i18n="mixin.media.noneHelpText">Don't display an image</help-text>
           <items />
         </option>
       </options>

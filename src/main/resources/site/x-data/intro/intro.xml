@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <x-data xmlns="urn:enonic:xp:model:1.0">
-  <display-name i18n="common.intro">Intro</display-name>
+  <display-name i18n="x-data.intro.displayName">Intro</display-name>
   <form>
    <mixin name="intro" />
   </form>

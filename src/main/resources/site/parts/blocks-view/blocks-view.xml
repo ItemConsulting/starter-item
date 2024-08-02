@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <part xmlns="urn:enonic:xp:model:1.0">
-  <display-name i18n="blocksView.displayName">Blocks view</display-name>
-  <description i18n="blocksView.description">Renders blocks on a page</description>
+  <display-name i18n="part.blocks-view.displayName">Blocks view</display-name>
+  <description i18n="part.blocks-view.description">Your page content is build by a sequence of blocks</description>
 
   <form>
     <input name="blockTitle" type="TextLine">
-      <label i18n="common.title">Block title</label>
+      <label i18n="part.blocks-view.title">Block title</label>
     </input>
 
     <mixin name="blocks" />

@@ -17,8 +17,5 @@ const config: StorybookConfig = {
     name: "@storybook/server-webpack5",
     options: {},
   },
-  docs: {
-    autodocs: "tag",
-  },
 };
 export default config;
