@@ -4,7 +4,7 @@ declare const app: {
   /**
    * The name of the application.
    */
-  name: "com.myproject";
+  name: "no.item.starter";
 
   /**
    * Version of the application.

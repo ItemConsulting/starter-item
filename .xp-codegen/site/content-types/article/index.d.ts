@@ -11,7 +11,7 @@ export type Article = {
         _selected: "withAltText";
 
         /**
-         * Normal image
+         * Normal image (with alt-text)
          */
         withAltText: {
           /**
@@ -37,7 +37,7 @@ export type Article = {
         _selected: "withoutAltText";
 
         /**
-         * Decorative image
+         * Decorative image (no alt-text)
          */
         withoutAltText: {
           /**

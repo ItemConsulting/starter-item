@@ -3,12 +3,12 @@ import { render } from "/lib/tineikt/freemarker";
 import { assertIsDefined } from "/lib/myproject/utils";
 import { forceArray } from "/lib/myproject/arrays";
 import { process } from "/site/mixins/blocks/blocks";
-import type { BlocksView } from ".";
+import { getLocale } from "/lib/myproject/locale";
 import type { Blocks as BlocksMixin } from "/site/mixins/blocks";
 import type { PartComponent } from "@enonic-types/core";
 import type { FreemarkerParams } from "/site/parts/blocks-view/blocks-view.freemarker";
 
-export type BlocksViewPart = PartComponent<`${string}:blocks-view`, BlocksView>;
+export type BlocksViewPart = PartComponent<`${typeof app.name}:blocks-view`>;
 
 const view = resolve("blocks-view.ftl");
 
@@ -19,11 +19,11 @@ export function get(): XP.Response {
   assertIsDefined(content);
   assertIsDefined(part);
 
-  const locale = content.language ?? "no";
+  const locale = getLocale({ content });
 
   const blocksInComponent: BlocksMixin["blocks"] =
     content.type === "portal:site"
-      ? part.config.blocks ?? (getSite()?.x[app.name.replace(/\./g, "-")]?.frontpage?.blocks as BlocksMixin["blocks"])
+      ? (part.config.blocks ?? (getSite()?.x[app.name.replace(/\./g, "-")]?.frontpage?.blocks as BlocksMixin["blocks"]))
       : part.config.blocks;
 
   const processedBlocks = process(

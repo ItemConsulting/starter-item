@@ -6,6 +6,7 @@ import { assertIsDefined } from "/lib/myproject/utils";
 import type { Default } from ".";
 import type { PageComponent } from "@enonic-types/core";
 import type { FreemarkerParams } from "./default.freemarker";
+import { getLocale } from "/lib/myproject/locale";
 
 type DefaultPage = PageComponent<"no.item.starter:default", Default>;
 
@@ -20,7 +21,7 @@ export function all(): XP.Response {
   assertIsDefined(site);
   assertIsDefined(siteConfig);
 
-  const locale = content.language ?? site.language ?? "no";
+  const locale = getLocale({ content, site });
 
   return {
     status: 200,

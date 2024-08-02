@@ -103,8 +103,7 @@
   <a
     href="${menuItem.url}"
     [#if menuItem.newWindow]target="${menuItem.newWindow}"[/#if]
-    [#if menuItem.isActive]aria-current="page"[/#if]
-    role="menuitem">
+    [#if menuItem.isActive]aria-current="page"[/#if]>
 
     ${menuItem.title}
   </a>

@@ -64,7 +64,7 @@ export type ImageConfig = {
   };
 };
 
-export type ContentBaseFolder = Content<{}, `base:folder`>;
+export type ContentBaseFolder = Content<Record<PropertyKey, never>, `base:folder`>;
 export type ContentBaseShortcut = Content<{ target: string }, "base:shortcut">;
 export type ContentImage = Content<Image, "media:image">;
 export type ContentVector = Content<BaseMedia, "media:vector">;
