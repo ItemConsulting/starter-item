@@ -4,4 +4,4 @@ export type Intro = {
    * Intro
    */
   intro?: string;
-}
+};

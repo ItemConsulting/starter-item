@@ -62,4 +62,4 @@ export type Media = {
          */
         none: Record<string, unknown>;
       };
-}
+};

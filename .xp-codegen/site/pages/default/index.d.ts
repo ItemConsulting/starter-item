@@ -4,4 +4,4 @@ export type Default = {
    * Show With Aside
    */
   showWithAside: boolean;
-}
+};
