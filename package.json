@@ -50,7 +50,7 @@
     "@item-enonic-types/lib-turbo-streams": "^1.0.5",
     "@itemconsulting/preset-enonic-xp": "^0.0.3",
     "@itemconsulting/xp-storybook-utils": "^0.0.5",
-    "@itemconsulting/lib-item-blocks": "file:/home/tomaj/code/item/lib-xp-item-blocks/lib-item-blocks-0.0.1-BETA3.tgz",
+    "@itemconsulting/lib-item-blocks": "file:/home/tomaj/code/item/lib-xp-item-blocks/lib-item-blocks-0.0.1-BETA4.tgz",
     "@storybook/addon-a11y": "^8.2.7",
     "@storybook/addon-essentials": "^8.2.7",
     "@storybook/addon-links": "^8.2.7",
@@ -73,7 +73,6 @@
     "postcss-import": "^16.1.0",
     "postcss-loader": "^8.1.1",
     "postcss-nesting": "^12.1.5",
-    "postcss-normalize": "^10.0.1",
     "postcss-reporter": "^7.1.0",
     "postcss-url": "^10.1.3",
     "prettier": "^3.3.3",
@@ -83,5 +82,8 @@
     "tsup": "^8",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.0.0"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }

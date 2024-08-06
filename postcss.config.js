@@ -5,7 +5,6 @@ module.exports = {
     "postcss-reporter": {
       clearReportedMessages: true,
     },
-    "postcss-normalize": {},
     "postcss-nesting": {},
     autoprefixer: {},
     cssnano: {},

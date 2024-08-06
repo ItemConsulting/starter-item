@@ -1,12 +1,6 @@
 :root {
   /* Core tokens */
-  --font-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-  /* Colors token */
-  --color-black: #000814;
-  --color-white: #FFFFFF;
-  --color-petroleum: #0B3C49;
-  --color-turquoise: #0AFFD2;
+  --font-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial;
 
   /* Spacing */
   --spacing-05: 5px;

@@ -1,9 +1,9 @@
 import { getSite, type Content, type Site } from "/lib/xp/portal";
 
-const DEFAULT_LOCALE = "no";
+const LOCALE_DEFAULT = "no";
 
 export function getLocale({ content, site }: GetLocaleParams): string {
-  const language = content?.language ?? site?.language ?? getSite()?.language ?? DEFAULT_LOCALE;
+  const language = content?.language ?? site?.language ?? getSite()?.language ?? LOCALE_DEFAULT;
 
   return language.replace("_", "-");
 }

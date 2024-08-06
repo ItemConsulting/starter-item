@@ -1,0 +1,55 @@
+:root {
+  --blocks-color-accent-background-default: var(--color-accent-background-default);
+  --blocks-color-accent-background-subtle: var(--color-accent-background-subtle);
+  --blocks-color-accent-surface-default: var(--color-accent-surface-default);
+  --blocks-color-accent-surface-hover: var(--color-accent-surface-hover);
+  --blocks-color-accent-surface-active: var(--color-accent-surface-active);
+  --blocks-color-accent-border-subtle: var(--color-accent-border-subtle);
+  --blocks-color-accent-border-default: var(--color-accent-border-default);
+  --blocks-color-accent-border-strong: var(--color-accent-border-strong);
+  --blocks-color-accent-base-default: var(--color-accent-base-default);
+  --blocks-color-accent-base-hover: var(--color-accent-base-hover);
+  --blocks-color-accent-base-active: var(--color-accent-base-active);
+  --blocks-color-accent-text-subtle: var(--color-accent-text-subtle);
+  --blocks-color-accent-text-default: var(--color-accent-text-default);
+  --blocks-color-accent-contrast-default: var(--color-accent-contrast-default);
+  --blocks-color-accent-contrast-subtle: var(--color-accent-contrast-subtle);
+
+  --blocks-color-neutral-background-default: var(--color-neutral-background-default);
+  --blocks-color-neutral-background-subtle: var(--color-neutral-background-subtle);
+  --blocks-color-neutral-surface-default: var(--color-neutral-surface-default);
+  --blocks-color-neutral-surface-hover: var(--color-neutral-surface-hover);
+  --blocks-color-neutral-surface-active: var(--color-neutral-surface-active);
+  --blocks-color-neutral-border-subtle: var(--color-neutral-border-subtle);
+  --blocks-color-neutral-border-default: var(--color-neutral-border-default);
+  --blocks-color-neutral-border-strong: var(--color-neutral-border-strong);
+  --blocks-color-neutral-base-default: var(--color-neutral-base-default);
+  --blocks-color-neutral-base-hover: var(--color-neutral-base-hover);
+  --blocks-color-neutral-base-active: var(--color-neutral-base-active);
+  --blocks-color-neutral-text-subtle: var(--color-neutral-text-subtle);
+  --blocks-color-neutral-text-default: var(--color-neutral-text-default);
+  --blocks-color-neutral-contrast-default: var(--color-neutral-contrast-default);
+  --blocks-color-neutral-contrast-subtle: var(--color-neutral-contrast-subtle);
+
+  .theme-accent,
+  .theme-neutral,
+  .theme-brand1,
+  .theme-brand2,
+  .theme-brand3 {
+  --blocks-color-theme-background-default: var(--color-theme-background-default);
+    --blocks-color-theme-background-subtle: var(--color-theme-background-subtle);
+    --blocks-color-theme-surface-default: var(--color-theme-surface-default);
+    --blocks-color-theme-surface-hover: var(--color-theme-surface-hover);
+    --blocks-color-theme-surface-active: var(--color-theme-surface-active);
+    --blocks-color-theme-border-subtle: var(--color-theme-border-subtle);
+    --blocks-color-theme-border-default: var(--color-theme-border-default);
+    --blocks-color-theme-border-strong: var(--color-theme-border-strong);
+    --blocks-color-theme-base-default: var(--color-theme-base-default);
+    --blocks-color-theme-base-hover: var(--color-theme-base-hover);
+    --blocks-color-theme-base-active: var(--color-theme-base-active);
+    --blocks-color-theme-text-subtle: var(--color-theme-text-subtle);
+    --blocks-color-theme-text-default: var(--color-theme-text-default);
+    --blocks-color-theme-contrast-default: var(--color-theme-contrast-default);
+    --blocks-color-theme-contrast-subtle: var(--color-theme-contrast-subtle);
+  }
+}

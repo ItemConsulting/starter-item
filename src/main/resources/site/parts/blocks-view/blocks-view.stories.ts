@@ -2,14 +2,30 @@ import id from "./blocks-view.ftl";
 import "./blocks-view.css";
 import DetailsAnimated from "@itemconsulting/details-animated";
 import type { Meta, StoryObj } from "@itemconsulting/xp-storybook-utils";
-import type { FreemarkerParams } from "./blocks-view.freemarker";
 
 if (!window.customElements.get("details-animated")) {
   window.customElements.define("details-animated", DetailsAnimated);
 }
 
-const meta: Meta<FreemarkerParams> = {
+const meta: Meta = {
   title: "Part/Blocks View",
+  argTypes: {
+    accordionClasses: {
+      name: "Accordion Theme",
+      description: "Chose a color theme for the component",
+      options: ["theme-accent", "theme-neutral", "theme-brand1", "theme-brand2", "theme-brand3"],
+      control: {
+        type: "inline-radio",
+        labels: {
+          "theme-accent": "Accent",
+          "theme-neutral": "Neutral",
+          "theme-brand1": "Brand1",
+          "theme-brand2": "Brand2",
+          "theme-brand3": "Brand3",
+        },
+      },
+    },
+  },
   parameters: {
     server: {
       id,
@@ -55,8 +71,9 @@ export const blocksView: StoryObj = {
         <li>Unicorns</li>
       </ul>
       <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Duis aute <a href="#">irure dolor in reprehenderit</a> in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <span class="icon icon-smile"></span>
       </p>
     `,
     accordionItems: [

@@ -9,7 +9,7 @@
   display: inline-block;
   width: var(--icon-width, var(--icon-size, 1em));
   height: var(--icon-height, var(--icon-size, 1em));
-  background-color: var(--icon-color, var(--color-primary));
+  background-color: var(--icon-color, var(--color-accent-base-default));
 
   --icon-margin: var(--margin-10);
 }
@@ -28,4 +28,8 @@
   margin-left: var(--icon-margin);
 
   --icon-position: right;
+}
+
+.icon-smile {
+  --icon-url: url("../../../assets/images/favicon.svg");
 }

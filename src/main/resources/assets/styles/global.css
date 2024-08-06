@@ -1,8 +1,8 @@
 body {
-  background-color: var(--color-background);
-  font-family: var(--font-sans-serif);
+  background-color: var(--color-neutral-background-default);
+  font-family: var(--font-sans-serif), sans-serif;
   font-size: var(--font-size-md, 16px);
-  color: var(--color-base);
+  color: var(--blocks-color-neutral-text-default);
 }
 
 /* Headings */
@@ -43,5 +43,17 @@ p, .p {
 }
 
 a {
-  color: var(--color-primary);
+  --link-color: var(--color-accent-text-subtle);
+  --link-background-color: transparent;
+  color: var(--link-color);
+  background-color: var(--link-background-color);
+
+  &:hover {
+    --link-color: var(--color-accent-text-default);
+  }
+
+  &:active {
+    --link-color: var(--color-accent-text-default);
+    --link-background-color: var(--color-accent-surface-default);
+  }
 }
