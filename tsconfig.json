@@ -17,7 +17,7 @@
       "/lib/tineikt/freemarker": ["./node_modules/@item-enonic-types/lib-freemarker"],
 			"/lib/xp/*": ["./node_modules/@enonic-types/lib-*"],
       "/lib/*": ["./src/main/resources/lib/*", "./node_modules/@item-enonic-types/lib-*"],
-			"/*": ["./src/main/resources/*","./.xp-codegen/*"], // So one can import local files using absolute path (same as Enonic does during runtime).
+			"/*": ["./src/main/resources/*","./.xp-codegen/*", "./node_modules/@itemconsulting/lib-item-blocks/dist/*"], // So one can import local files using absolute path (same as Enonic does during runtime).
 		},
 
 

@@ -50,6 +50,7 @@
     "@item-enonic-types/lib-turbo-streams": "^1.0.5",
     "@itemconsulting/preset-enonic-xp": "^0.0.3",
     "@itemconsulting/xp-storybook-utils": "^0.0.5",
+    "@itemconsulting/lib-item-blocks": "file:/home/tomaj/code/item/lib-xp-item-blocks/lib-item-blocks-0.0.1-BETA3.tgz",
     "@storybook/addon-a11y": "^8.2.7",
     "@storybook/addon-essentials": "^8.2.7",
     "@storybook/addon-links": "^8.2.7",
