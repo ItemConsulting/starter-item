@@ -14,7 +14,7 @@
     "@enonic-types/lib-io": "^7.14.3",
     "@enonic-types/lib-mail": "^7.14.3",
     "@enonic-types/lib-node": "^7.14.4",
-    "@enonic-types/lib-portal": "^7.14.3",
+    "@enonic-types/lib-portal": "^7.14.4",
     "@enonic-types/lib-project": "^7.14.4",
     "@enonic-types/lib-repo": "^7.14.4",
     "@enonic-types/lib-scheduler": "^7.14.4",
