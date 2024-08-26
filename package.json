@@ -6,7 +6,7 @@
     "@enonic-types/lib-auth": "^7.14.4",
     "@enonic-types/lib-cluster": "^7.14.4",
     "@enonic-types/lib-common": "^7.14.3",
-    "@enonic-types/lib-content": "^7.14.3",
+    "@enonic-types/lib-content": "^7.14.4",
     "@enonic-types/lib-context": "^7.14.4",
     "@enonic-types/lib-event": "^7.14.4",
     "@enonic-types/lib-export": "^7.14.3",
