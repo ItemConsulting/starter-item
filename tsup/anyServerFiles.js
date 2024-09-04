@@ -12,7 +12,10 @@ function checkFilesRecursively(folderPath) {
       continue; // Skip ignored folders
     }
     if (fs.lstatSync(filePath).isDirectory()) {
-      return checkFilesRecursively(filePath);
+      const found = checkFilesRecursively(filePath);
+      if (found) {
+        return true; // Exit with code 0 if a matching file is found
+      }
     } else if (file.match(pattern)) {
       return true; // Exit with code 0 if a matching file is found
     }

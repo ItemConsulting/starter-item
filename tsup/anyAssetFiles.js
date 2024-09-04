@@ -8,7 +8,10 @@ function checkFilesRecursively(folderPath) {
   for (const file of files) {
     const filePath = `${folderPath}/${file}`;
     if (fs.lstatSync(filePath).isDirectory()) {
-      checkFilesRecursively(filePath);
+      const found = checkFilesRecursively(filePath);
+      if (found) {
+        return true; // Exit with code 0 if a matching file is found
+      }
     } else if (file.match(regExpPattern)) {
       return true; // Exit with code 0 if a matching file is found
     }
