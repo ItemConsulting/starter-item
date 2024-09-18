@@ -7,10 +7,13 @@ import {
   DIR_SRC,
   DIR_SRC_ASSETS,
 } from './constants';
+import { dict } from './dict';
 
 
 export default function buildServerConfig(): Options {
+
   const GLOB_EXTENSIONS_SERVER = '{ts,js}';
+
   const FILES_SERVER = globSync(
     `${DIR_SRC}/${AND_BELOW}/*.${GLOB_EXTENSIONS_SERVER}`,
     {
@@ -21,10 +24,15 @@ export default function buildServerConfig(): Options {
     }
   ).map(s => s.replaceAll('\\', '/'));
 
+  const SERVER_JS_ENTRY = dict(FILES_SERVER.map(k => [
+		k.replace(`${DIR_SRC}/`, '').replace(/\.[^.]*$/, ''), // name
+    k
+	]));
+
   return {
     bundle: true,
     dts: false, // d.ts files are use useless at runtime
-    entry: FILES_SERVER,
+    entry: SERVER_JS_ENTRY,
     env: {
       BROWSER_SYNC_PORT: '3100',
     },
@@ -62,7 +70,8 @@ export default function buildServerConfig(): Options {
     shims: false,
     splitting: true,
     sourcemap: false,
-    target: 'es5'
+    target: 'es5',
+    tsconfig: `${DIR_SRC}/tsconfig.json`,
   };
 }
 

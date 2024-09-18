@@ -3,17 +3,26 @@ import type { Options } from '.';
 
 import { globSync } from 'glob';
 import { AND_BELOW, DIR_SRC_ASSETS } from './constants';
+import { dict } from './dict';
 
 
 export default function buildAssetConfig(): Options {
+
   const GLOB_EXTENSIONS_ASSETS = '{tsx,ts,jsx,js}';
+
   const FILES_ASSETS = globSync(
     `${DIR_SRC_ASSETS}/${AND_BELOW}/*.${GLOB_EXTENSIONS_ASSETS}`
   ).map(s => s.replaceAll('\\', '/'));
+
+  const ASSETS_JS_ENTRY = dict(FILES_ASSETS.map(k => [
+		k.replace(`${DIR_SRC_ASSETS}/`, '').replace(/\.[^.]*$/, ''), // name
+    k
+	]));
+
   return {
     bundle: true,
     dts: false, // d.ts files are use useless at runtime
-    entry: FILES_ASSETS,
+    entry: ASSETS_JS_ENTRY,
     esbuildPlugins: [],
 
     // By default tsup bundles all imported modules, but dependencies
