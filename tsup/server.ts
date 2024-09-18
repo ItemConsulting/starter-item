@@ -13,16 +13,21 @@ import { dict } from './dict';
 export default function buildServerConfig(): Options {
 
   const GLOB_EXTENSIONS_SERVER = '{ts,js}';
+  const GLOB_CONFIG = {
+    absolute: false,
+    posix: true
+  }
 
   const FILES_SERVER = globSync(
     `${DIR_SRC}/${AND_BELOW}/*.${GLOB_EXTENSIONS_SERVER}`,
     {
-      absolute: false,
+      ...GLOB_CONFIG,
       ignore: globSync(
-        `${DIR_SRC_ASSETS}/${AND_BELOW}/*.${GLOB_EXTENSIONS_SERVER}`
+        `${DIR_SRC_ASSETS}/${AND_BELOW}/*.${GLOB_EXTENSIONS_SERVER}`,
+        GLOB_CONFIG
       )
     }
-  ).map(s => s.replaceAll('\\', '/'));
+  );
 
   const SERVER_JS_ENTRY = dict(FILES_SERVER.map(k => [
 		k.replace(`${DIR_SRC}/`, '').replace(/\.[^.]*$/, ''), // name

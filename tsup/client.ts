@@ -11,8 +11,11 @@ export default function buildAssetConfig(): Options {
   const GLOB_EXTENSIONS_ASSETS = '{tsx,ts,jsx,js}';
 
   const FILES_ASSETS = globSync(
-    `${DIR_SRC_ASSETS}/${AND_BELOW}/*.${GLOB_EXTENSIONS_ASSETS}`
-  ).map(s => s.replaceAll('\\', '/'));
+    `${DIR_SRC_ASSETS}/${AND_BELOW}/*.${GLOB_EXTENSIONS_ASSETS}`,
+    {
+      posix: true
+    }
+  );
 
   const ASSETS_JS_ENTRY = dict(FILES_ASSETS.map(k => [
 		k.replace(`${DIR_SRC_ASSETS}/`, '').replace(/\.[^.]*$/, ''), // name
