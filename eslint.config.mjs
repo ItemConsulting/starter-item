@@ -11,6 +11,8 @@ export default tseslint.config(
     // object applies to all files matched by files.
     ignores: [
       'build/**/*.*',
+      'src/jest/server/setupFile.ts',
+      'tsup/*.*',
     ],
   },
 
