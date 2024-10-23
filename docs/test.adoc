@@ -19,7 +19,7 @@ npm install --save-dev jest-environment-jsdom ts-node ts-jest
 
 In our example we will configure processing of both client-side and server-side Typescript code.
 
-Create a file called jest.config.js in the root of the project with the following content:
+Create a file called jest.config.ts in the root of the project with the following content:
 
 [source, TypeScript]
 ----
