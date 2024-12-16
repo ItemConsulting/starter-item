@@ -21,7 +21,7 @@
     "@enonic-types/lib-task": "^7.14.4",
     "@enonic-types/lib-value": "^7.14.4",
     "@enonic-types/lib-websocket": "^7.14.4",
-    "@eslint/js": "^9.15.0",
+    "@eslint/js": "^9.17.0",
     "@swc/core": "^1.10.1",
     "@types/node": "^22.10.1",
     "concurrently": "^9.1.0",
