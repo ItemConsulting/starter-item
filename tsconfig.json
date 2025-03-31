@@ -26,6 +26,7 @@
   ],
 
   "compilerOptions": {
+    "strict": true,
     // Do NOT add this as it will resolve tsup to the local tsup folder, rather
     // than the tsup node_module.
     // "baseUrl": ".",
@@ -42,7 +43,8 @@
     // This feature differs from typeRoots in that it is about specifying only the exact
     // types you want included, whereas typeRoots supports saying you want particular folders.
     "types": [
-      "node"
+      "node",
+      "@itemconsulting/xp-storybook-utils/global"
     ],
   },
 }

@@ -1,6 +1,8 @@
 plugins {
+  id "java"
   id 'com.enonic.xp.app' version '3.6.1'
   id 'com.github.node-gradle.node' version '7.1.0'
+  id "no.item.xp.codegen" version "2.7.0"
 }
 
 app {
@@ -12,6 +14,7 @@ app {
 }
 
 dependencies {
+  implementation "com.enonic.xp:script-api:${xpVersion}"
 
   // ─────────────────────────────────────────────────────────────────────────
   // include "com.enonic.xp:lib-admin:${xpVersion}"
@@ -61,14 +64,30 @@ dependencies {
   // https://market.enonic.com/vendors/enonic/text-encoding
   // include 'com.enonic.lib:lib-text-encoding:2.1.1'
 
-  // https://market.enonic.com/vendors/enonic/thymeleaf-lib
-  // include "com.enonic.lib:lib-thymeleaf:2.1.0"
+  // ─────────────────────────────────────────────────────────────────────────
+  // Item Libraries (https://repo.itemtest.no/#/releases)
+  // ─────────────────────────────────────────────────────────────────────────
+  //include "no.item:lib-xp-turbo:1.1.2"
+  include "no.item:lib-xp-time:1.2.1"
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // 3rd Party libraries
+  // ─────────────────────────────────────────────────────────────────────────
+  include "com.github.tineikt:xp-lib-freemarker:2.0.2"
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // Webjars (https://www.webjars.org/)
+  // ─────────────────────────────────────────────────────────────────────────
+  webjar "org.webjars.npm:oddbird__popover-polyfill:0.5.2"
+  webjar "org.webjars.npm:hotwired__turbo:8.0.13"
 }
 
 repositories {
   mavenLocal()
   mavenCentral()
   xp.enonicRepo()
+  maven { url "https://repo.itemtest.no/releases" }
+  maven { url "https://jitpack.io" }
 }
 
 node {
@@ -105,6 +124,7 @@ tasks.register('npmBuild', NpmTask) {
     'build'
   ]
   dependsOn npmInstall
+  dependsOn generateTypeScript
   environment = [
     'FORCE_COLOR': 'true',
     'LOG_LEVEL_FROM_GRADLE': gradle.startParameter.logLevel.toString(),
