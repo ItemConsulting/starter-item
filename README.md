@@ -1,4 +1,4 @@
-# TypeScript Starter for Enonic XP
+# Item Starter for Enonic XP
 
 This starter kit will set up an empty shell for your new Enonic app.
 
@@ -12,7 +12,7 @@ straight to creating what you're creating.
 You first need to install Enonic CLI. Then run the following commands to build and deploy it:
 
 ```bash
-~ $ enonic project create -r starter-ts
+~ $ enonic project create -r ItemConsulting/starter-item
 ... Answer wizard question
 
 ~ $ cd <project-folder>

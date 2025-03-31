@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<content-type xmlns="urn:enonic:xp:model:1.0">
+  <display-name i18n="contentType.article.displayName">Article</display-name>
+  <description i18n="contentType.article.description">An article for the blog</description>
+  <super-type>base:structured</super-type>
+
+  <form>
+    <input type="HtmlArea" name="body">
+      <label i18n="contentType.article.text">Text</label>
+    </input>
+  </form>
+</content-type>

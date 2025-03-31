@@ -1,4 +1,6 @@
 {
+  "name": "item-starter",
+  "version": "0.0.1",
   "devDependencies": {
     "@enonic-types/core": "^7.16.1",
     "@enonic-types/global": "^7.16.1",
@@ -31,19 +33,31 @@
     "ts-node": "^10.9.2",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.47.0"
+    "typescript-eslint": "^8.47.0",
+    "@changesets/cli": "^2.29.5",
+    "@item-enonic-types/lib-freemarker": "^2.0.2",
+    "@item-enonic-types/lib-http-client": "^3.2.2",
+    "@item-enonic-types/lib-menu": "^4.2.1",
+    "@item-enonic-types/lib-time": "^1.2.1",
+    "@item-enonic-types/lib-turbo-streams": "^1.1.2",
+    "@itemconsulting/preset-enonic-xp": "^0.2.0",
+    "@itemconsulting/xp-storybook-utils": "^0.0.7"
   },
   "private": true,
   "scripts": {
     "build": "concurrently -c auto -g --timings npm:build:*",
-    "build:assets": "node tsup/build.js src/main/resources/assets build/resources/main/assets",
-    "build:server": "node tsup/build.js src/main/resources build/resources/main",
+    "build:assets": "node tsup/anyAssetFiles.js && npx tsup -d build/resources/main/assets",
+    "build:postcss": "npx postcss src/main/resources/assets/styles/main.css -m -d build/resources/main/assets --base src/main/resources/assets --ext min.css",
+    "build:server": "node tsup/anyServerFiles.js && npx tsup -d build/resources/main",
     "check": "concurrently -c auto -g --timings npm:check:types npm:lint",
-    "check:types": "concurrently --kill-others-on-fail -g -r --timings npm:check:types:*",
-    "check:types:assets": "node tsup/check.js src/main/resources/assets",
-    "check:types:server": "node tsup/check.js src/main/resources src/main/resources/assets",
+    "check:types": "concurrently -g -r --timings npm:check:types:*",
+    "check:types:assets": "node tsup/anyAssetFiles.js && npx tsc --noEmit -p src/main/resources/assets/tsconfig.json",
+    "check:types:server": "node tsup/anyServerFiles.js && npx tsc --noEmit -p src/main/resources/tsconfig.json",
     "cov": "jest --no-cache --coverage",
-    "lint": "eslint --cache",
-    "test": "jest --no-cache"
+    "lint": "eslint --cache \"src/main/resources/**/*.ts\"",
+    "test": "jest --no-cache",
+    "storybook": "storybook dev -p 6006",
+    "release": "npm run build",
+    "versioning": "npx changeset version && npm i --package-lock-only && NEW_VERSION=$(node -p \"require('./package.json').version\") && sed -i \"s/version.*/version = ${NEW_VERSION}/\" gradle.properties"
   }
 }
