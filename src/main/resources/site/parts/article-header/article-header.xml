@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<part xmlns="urn:enonic:xp:model:1.0">
+  <display-name i18n="part.article-header.displayName">Simple Header</display-name>
+  <description i18n="part.article-header.description">Simple header for articles</description>
+
+  <form>
+    <input type="TextLine" name="intro">
+      <label i18n="part.article-header.intro">Intro</label>
+    </input>
+  </form>
+</part>

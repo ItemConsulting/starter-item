@@ -22,9 +22,11 @@ export default function buildServerConfig(): Options {
     `${DIR_SRC}/${AND_BELOW}/*.${GLOB_EXTENSIONS_SERVER}`,
     {
       ...GLOB_CONFIG,
-      ignore: globSync(
-        `${DIR_SRC_ASSETS}/${AND_BELOW}/*.${GLOB_EXTENSIONS_SERVER}`,
-        GLOB_CONFIG
+      ignore: ([] as string[]).concat(
+        globSync(`${DIR_SRC_ASSETS}/${AND_BELOW}/*.${GLOB_EXTENSIONS_SERVER}`, GLOB_CONFIG),
+        globSync(`**/*.stories.ts`, GLOB_CONFIG),
+        globSync(`**/*.d.ts`, GLOB_CONFIG),
+        globSync(`**/*.freemarker.ts`, GLOB_CONFIG),
       )
     }
   );
@@ -63,6 +65,9 @@ export default function buildServerConfig(): Options {
       '/lib/text-encoding',
       '/lib/thymeleaf',
       /^\/lib\/xp\//,
+      '/lib/menu',
+      '/lib/time',
+      '/lib/tineikt/freemarker',
     ],
     format: 'cjs',
     minify: false, // Minifying server files makes debugging harder
@@ -73,7 +78,7 @@ export default function buildServerConfig(): Options {
       .includes(process.env.LOG_LEVEL_FROM_GRADLE || ''),
 
     shims: false,
-    splitting: true,
+    splitting: false,
     sourcemap: false,
     target: 'es5',
     tsconfig: `${DIR_SRC}/tsconfig.json`,
