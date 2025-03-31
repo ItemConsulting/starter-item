@@ -97,3 +97,7 @@ crashlytics-build.properties
 *.css.map
 
 .eslintcache
+
+*storybook.log
+.env
+src/main/resources/i18n/phrases.tmp.properties
