@@ -1,7 +1,12 @@
+const path = require("path");
+
 module.exports = (ctx) => ({
   map: ctx.options.map,
   plugins: {
-    "postcss-import": {},
+    "postcss-import": {
+      root: ctx.file.dirname,
+      path: [path.join(process.cwd(), "node_modules")],
+    },
     "postcss-url": {
       url: "copy",
     },
