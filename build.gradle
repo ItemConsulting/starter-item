@@ -14,8 +14,6 @@ app {
 dependencies {
 
   // ─────────────────────────────────────────────────────────────────────────
-  // https://repo.enonic.com/service/rest/repository/browse/public/com/enonic/xp/
-  // ─────────────────────────────────────────────────────────────────────────
   // include "com.enonic.xp:lib-admin:${xpVersion}"
   // include "com.enonic.xp:lib-app:${xpVersion}"
   // include "com.enonic.xp:lib-auditlog:${xpVersion}"
@@ -44,7 +42,6 @@ dependencies {
   // ─────────────────────────────────────────────────────────────────────────
   // Libraries from the Enonic Market ( https://market.enonic.com/libraries )
   // ─────────────────────────────────────────────────────────────────────────
-  // https://repo.enonic.com/service/rest/repository/browse/public/com/enonic/lib/
 
   // https://market.enonic.com/vendors/enonic/cache-lib
   // include 'com.enonic.lib:lib-cache:2.2.0'
