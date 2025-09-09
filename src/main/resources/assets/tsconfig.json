@@ -25,6 +25,7 @@
   ],
 
   "compilerOptions": {
+    "strict": true,
     "skipLibCheck": true,
     "lib": [
       "DOM" // console, document, window, etc...

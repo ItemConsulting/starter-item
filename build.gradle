@@ -73,7 +73,7 @@ dependencies {
   // ─────────────────────────────────────────────────────────────────────────
   // 3rd Party libraries
   // ─────────────────────────────────────────────────────────────────────────
-  include "com.github.tineikt:xp-lib-freemarker:2.0.2"
+  include "no.item:lib-xp-freemarker:3.0.0-SNAPSHOT"
 
   // ─────────────────────────────────────────────────────────────────────────
   // Webjars (https://www.webjars.org/)
@@ -87,7 +87,7 @@ repositories {
   mavenCentral()
   xp.enonicRepo()
   maven { url "https://repo.itemtest.no/releases" }
-  maven { url "https://jitpack.io" }
+  maven { url "https://repo.itemtest.no/snapshots" }
 }
 
 node {

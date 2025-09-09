@@ -1,6 +1,6 @@
 import { getContent, getComponent, type Content } from "/lib/xp/portal";
 import { assertIsDefined } from "/lib/myproject/utils";
-import { render } from "/lib/tineikt/freemarker";
+import { render } from "/lib/freemarker";
 import type { Article } from "/site/content-types";
 import type { FreemarkerParams } from "./article-header.freemarker";
 import type { Response, PartComponent } from "@enonic-types/core";

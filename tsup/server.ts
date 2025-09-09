@@ -67,7 +67,7 @@ export default function buildServerConfig(): Options {
       /^\/lib\/xp\//,
       '/lib/menu',
       '/lib/time',
-      '/lib/tineikt/freemarker',
+      '/lib/freemarker',
     ],
     format: 'cjs',
     minify: false, // Minifying server files makes debugging harder
