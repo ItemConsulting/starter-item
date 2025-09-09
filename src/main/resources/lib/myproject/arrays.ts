@@ -11,9 +11,9 @@ export function forceArray<A>(data: A | Array<A> | undefined | null): ReadonlyAr
 export function find<T, S extends T>(arr: T[], predicate: (value: T) => value is S): S | undefined;
 export function find<T>(arr: T[], predicate: (value: T) => boolean): T | undefined;
 export function find<T>(arr: T[], predicate: (value: T) => boolean): T | undefined {
-  for (const key in arr) {
-    if (predicate(arr[key])) {
-      return arr[key];
+  for (const arrItem of arr) {
+    if (predicate(arrItem)) {
+      return arrItem;
     }
   }
 }
