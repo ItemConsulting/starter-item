@@ -13,6 +13,7 @@ export default tseslint.config(
       'build/**/*.*',
       'src/jest/server/setupFile.ts',
       'tsup/*.*',
+      'src/**/*.js'
     ],
   },
 

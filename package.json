@@ -35,12 +35,12 @@
   "private": true,
   "scripts": {
     "build": "concurrently -c auto -g --timings npm:build:*",
-    "build:assets": "node tsup/anyAssetFiles.js && npx tsup -d build/resources/main/assets || exit 0",
-    "build:server": "node tsup/anyServerFiles.js && npx tsup -d build/resources/main || exit 0",
+    "build:assets": "node tsup/build.js src/main/resources/assets build/resources/main/assets",
+    "build:server": "node tsup/build.js src/main/resources build/resources/main",
     "check": "concurrently -c auto -g --timings npm:check:types npm:lint",
-    "check:types": "concurrently -g -r --timings npm:check:types:*",
-    "check:types:assets": "node tsup/anyAssetFiles.js && npx tsc --noEmit -p src/main/resources/assets/tsconfig.json || exit 0",
-    "check:types:server": "node tsup/anyServerFiles.js && npx tsc --noEmit -p src/main/resources/tsconfig.json || exit 0",
+    "check:types": "concurrently --kill-others-on-fail -g -r --timings npm:check:types:*",
+    "check:types:assets": "node tsup/check.js src/main/resources/assets",
+    "check:types:server": "node tsup/check.js src/main/resources src/main/resources/assets",
     "cov": "jest --no-cache --coverage",
     "lint": "eslint --cache",
     "test": "jest --no-cache"
