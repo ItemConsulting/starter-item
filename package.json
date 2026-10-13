@@ -30,7 +30,7 @@
     "@swc/core": "^1.15.43",
     "@swc/jest": "^0.2.39",
     "@types/node": "^26.0.0",
-    "concurrently": "^10.0.4",
+    "concurrently": "^10.0.6",
     "glob": "^13.0.6",
     "jest": "^30.5.0",
     "jest-environment-jsdom": "^30.4.1",
