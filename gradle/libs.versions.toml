@@ -3,7 +3,7 @@
 [versions]
 asset = "2.0.1"
 cache = "3.0.0"
-http-client = "4.0.0"
+http-client = "4.0.1"
 mustache = "3.0.0"
 router = "4.0.0"
 static = "3.0.0"
