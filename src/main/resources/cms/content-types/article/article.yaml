@@ -1,0 +1,14 @@
+kind: "ContentType"
+title:
+  text: "Article"
+  i18n: "contentType.article.displayName"
+description:
+  text: "An article for the blog"
+  i18n: "contentType.article.description"
+superType: "base:structured"
+form:
+  - type: "HtmlArea"
+    name: "body"
+    label:
+      text: "Text"
+      i18n: "contentType.article.text"

@@ -4,6 +4,7 @@
   // "/lib/xp/<name>" paths entries in src/main/resources/tsconfig.json, this
   // makes auto-import suggest the runtime-correct "/lib/xp/<name>" specifiers.
   "typescript.preferences.autoImportSpecifierExcludeRegexes": [
-    "^@enonic-types/"
+    "^@enonic-types/",
+    "^@item-enonic-types/"
   ]
 }

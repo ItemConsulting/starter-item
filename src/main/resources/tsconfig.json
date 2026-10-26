@@ -9,7 +9,9 @@
   // These filenames are resolved relative to the directory containing the
   // tsconfig.json file.
   "include": [
-    "**/*.ts"
+    "**/*.ts",
+    // Types generated from the YAML descriptors by xp-codegen-plugin
+    "../../../.xp-codegen/**/*.d.ts"
   ],
 
   // Specifies an array of filenames or patterns that should be skipped when
@@ -22,6 +24,7 @@
   // codebase - it simply changes what the include setting finds.
   "exclude": [
     "**/*.d.ts",
+    "**/*.stories.ts",
     "assets/**/*.*",
     // "static/**/*.*",
   ],
@@ -66,7 +69,10 @@
       "/lib/xp/vhost": ["../../../node_modules/@enonic-types/lib-vhost/vhost"],
       "/lib/xp/websocket": ["../../../node_modules/@enonic-types/lib-websocket/websocket"],
       "/lib/xp/*": ["../../../node_modules/@enonic-types/lib-*"],
-      "/*": ["./*"],
+      // Item libraries. Add an entry when installing a new @item-enonic-types/lib-* package.
+      "/lib/freemarker": ["../../../node_modules/@item-enonic-types/lib-freemarker"],
+      "/lib/time": ["../../../node_modules/@item-enonic-types/lib-time"],
+      "/*": ["./*", "../../../.xp-codegen/*"],
     },
 
     "skipLibCheck": true,

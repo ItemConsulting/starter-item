@@ -1,3 +1,11 @@
+pluginManagement {
+  repositories {
+    gradlePluginPortal()
+    // xp-codegen-plugin 3.x (Enonic XP 8) is only published as a snapshot for now
+    maven { url = "https://repo.itemtest.no/snapshots" }
+  }
+}
+
 plugins {
   id 'com.enonic.xp.settings' version '4.2.0'
 }

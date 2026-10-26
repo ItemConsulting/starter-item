@@ -1,5 +1,5 @@
 kind: "Application"
-title: "TypeScript Example"
+title: "Starter Item"
 description: "Edit app description at src/main/resources/enonic.yaml"
-vendorName: "Acme Inc"
-vendorUrl: "https://example.com"
+vendorName: "Item Consulting"
+vendorUrl: "https://item.no"

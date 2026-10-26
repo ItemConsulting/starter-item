@@ -1,15 +1,13 @@
-name: Build
+name: CI
 
 on: [ push, workflow_dispatch ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v7
 
+      # Builds with the XP version, Java and Node.js the project declares
       - uses: enonic/action-app-build@v2
-
-      - uses: codecov/codecov-action@v7

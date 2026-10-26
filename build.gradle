@@ -1,6 +1,7 @@
 plugins {
   id 'com.enonic.xp.app'
   id 'com.github.node-gradle.node' version '7.1.0'
+  id 'no.item.xp.codegen' version '3.0.0-SNAPSHOT'
 }
 
 dependencies {
@@ -23,7 +24,7 @@ dependencies {
   // include xplibs.io
   // include xplibs.mail
   // include xplibs.node
-  // include xplibs.portal
+  include xplibs.portal
   // include xplibs.project
   // include xplibs.repo
   // include xplibs.scheduler
@@ -58,12 +59,27 @@ dependencies {
 
   // https://market.enonic.com/vendors/enonic/thymeleaf-lib
   // include libs.thymeleaf
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // Item libraries (https://repo.itemtest.no/#/releases)
+  // ─────────────────────────────────────────────────────────────────────────
+  include libs.item.freemarker
+  include libs.item.time
+  // include libs.item.turbo
+
+  // ─────────────────────────────────────────────────────────────────────────
+  // Webjars (https://www.webjars.org/)
+  // ─────────────────────────────────────────────────────────────────────────
+  webjar libs.webjar.popover.polyfill
+  webjar libs.webjar.turbo
 }
 
 repositories {
   mavenLocal()
   mavenCentral()
   xp.enonicRepo()
+  maven { url = "https://repo.itemtest.no/releases" }
+  maven { url = "https://repo.itemtest.no/snapshots" }
 }
 
 node {
@@ -92,6 +108,7 @@ tasks.register('npmBuild', NpmTask) {
     'build'
   ]
   dependsOn npmInstall
+  dependsOn generateTypeScript
   environment = [
     'FORCE_COLOR': 'true',
     'LOG_LEVEL_FROM_GRADLE': gradle.startParameter.logLevel.toString(),
@@ -106,6 +123,7 @@ jar.dependsOn npmBuild
 
 tasks.register('npmCheck', NpmTask) {
 	dependsOn npmInstall
+	dependsOn generateTypeScript
 	args = [
 		'run',
 		'check'

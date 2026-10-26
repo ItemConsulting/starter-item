@@ -23,7 +23,8 @@ function entries(dir: string, exts: string, ignore: string[] = []): Record<strin
   );
 }
 
-const serverEntry = entries(SRC, '{ts,js}', ['**/*.d.ts', `${SRC_ASSETS}/**`]);
+// *.stories.ts belong to Storybook, and *.freemarker.ts only hold the types of a template's model.
+const serverEntry = entries(SRC, '{ts,js}', ['**/*.d.ts', '**/*.stories.ts', '**/*.freemarker.ts', `${SRC_ASSETS}/**`]);
 const assetEntry = entries(SRC_ASSETS, '{tsx,ts,jsx,js}', ['**/*.d.ts']);
 
 // XP resolves an absolute import at runtime against the app's own resources
