@@ -29,9 +29,9 @@
     // This feature differs from typeRoots in that it is about specifying
     // only the exact types you want included, whereas typeRoots supports
     // saying you want particular folders.
-    // "types": [
-      // "jest", // Doesn't even work for test files in this folder?
-    // ],
+    "types": [
+      "node",
+    ],
 
   }, // compilerOptions
 

@@ -1,0 +1,29 @@
+# Libraries from the Enonic Market ( https://market.enonic.com/libraries ), Item and webjars
+# Enonic XP's own libraries are provided by the `xplibs` catalog (com.enonic.xp.settings plugin).
+[versions]
+asset = "2.0.1"
+cache = "3.0.0"
+http-client = "4.0.1"
+mustache = "3.0.0"
+router = "4.0.0"
+static = "3.0.0"
+thymeleaf = "3.0.0"
+item-freemarker = "4.0.0"
+item-time = "2.0.0"
+item-turbo = "1.1.2"
+webjar-popover-polyfill = "0.5.2"
+webjar-turbo = "8.0.13"
+
+[libraries]
+asset = { module = "com.enonic.lib:lib-asset", version.ref = "asset" }
+cache = { module = "com.enonic.lib:lib-cache", version.ref = "cache" }
+http-client = { module = "com.enonic.lib:lib-http-client", version.ref = "http-client" }
+mustache = { module = "com.enonic.lib:lib-mustache", version.ref = "mustache" }
+router = { module = "com.enonic.lib:lib-router", version.ref = "router" }
+static = { module = "com.enonic.lib:lib-static", version.ref = "static" }
+thymeleaf = { module = "com.enonic.lib:lib-thymeleaf", version.ref = "thymeleaf" }
+item-freemarker = { module = "no.item:lib-xp-freemarker", version.ref = "item-freemarker" }
+item-time = { module = "no.item:lib-xp-time", version.ref = "item-time" }
+item-turbo = { module = "no.item:lib-xp-turbo", version.ref = "item-turbo" }
+webjar-popover-polyfill = { module = "org.webjars.npm:oddbird__popover-polyfill", version.ref = "webjar-popover-polyfill" }
+webjar-turbo = { module = "org.webjars.npm:hotwired__turbo", version.ref = "webjar-turbo" }

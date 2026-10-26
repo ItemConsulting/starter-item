@@ -98,6 +98,9 @@ crashlytics-build.properties
 
 .eslintcache
 
-*storybook.log
+### Item ###
+.xp-codegen
 .env
+*storybook.log
+storybook-static
 src/main/resources/i18n/phrases.tmp.properties

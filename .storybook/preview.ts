@@ -1,18 +1,16 @@
-//import "../src/main/resources/assets/styles/core.css";
 import { createPreviewServerParams, type Preview } from "@itemconsulting/xp-storybook-utils";
-
-if(!process.env.STORYBOOK_SERVER_URL) {
-  throw Error(`You need to create a file named ".env" with "STORYBOOK_SERVER_URL" in it. Then restart storybook.`)
-}
+import "../src/main/resources/assets/styles/main.css";
 
 const preview: Preview = {
   parameters: {
     server: {
-      url: process.env.STORYBOOK_SERVER_URL,
+      // Rendered by the xp-storybook app (https://github.com/ItemConsulting/xp-storybook) in your local sandbox.
+      // Set STORYBOOK_SERVER_URL in a .env file to use another XP instance.
+      url: import.meta.env.STORYBOOK_SERVER_URL ?? "http://localhost:8080/api/no.item.storybook:preview",
       params: createPreviewServerParams({
         zonedDateTime: /Date$/,
-        region: /Region$/i
-      })
+        region: /Region$/i,
+      }),
     },
     controls: {
       matchers: {

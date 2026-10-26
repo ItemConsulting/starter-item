@@ -1,93 +1,85 @@
 plugins {
-  id "java"
-  id 'com.enonic.xp.app' version '3.6.2'
+  id 'com.enonic.xp.app'
   id 'com.github.node-gradle.node' version '7.1.0'
-  id "no.item.xp.codegen" version "2.7.0"
-}
-
-app {
-  name = "${appName}"
-  displayName = "${appDisplayName}"
-  vendorName = "${vendorName}"
-  vendorUrl = "${vendorUrl}"
-  systemVersion = "${xpVersion}"
+  id 'no.item.xp.codegen' version '3.0.0-SNAPSHOT'
 }
 
 dependencies {
-  implementation "com.enonic.xp:script-api:${xpVersion}"
 
   // ─────────────────────────────────────────────────────────────────────────
-  // include "com.enonic.xp:lib-admin:${xpVersion}"
-  // include "com.enonic.xp:lib-app:${xpVersion}"
-  // include "com.enonic.xp:lib-auditlog:${xpVersion}"
-  // include "com.enonic.xp:lib-auth:${xpVersion}"
-  // include "com.enonic.xp:lib-cluster:${xpVersion}"
-  // include "com.enonic.xp:lib-common:${xpVersion}"
-  // include "com.enonic.xp:lib-content:${xpVersion}"
-  // include "com.enonic.xp:lib-context:${xpVersion}"
-  // include "com.enonic.xp:lib-event:${xpVersion}"
-  // include "com.enonic.xp:lib-export:${xpVersion}"
-  // include "com.enonic.xp:lib-grid:${xpVersion}"
-  // include "com.enonic.xp:lib-i18n:${xpVersion}"
-  // include "com.enonic.xp:lib-io:${xpVersion}"
-  // include "com.enonic.xp:lib-mail:${xpVersion}"
-  // include "com.enonic.xp:lib-node:${xpVersion}"
-  // include "com.enonic.xp:lib-portal:${xpVersion}"
-  // include "com.enonic.xp:lib-project:${xpVersion}"
-  // include "com.enonic.xp:lib-repo:${xpVersion}"
-  // include "com.enonic.xp:lib-scheduler:${xpVersion}"
-  // include "com.enonic.xp:lib-schema:${xpVersion}"
-  // include "com.enonic.xp:lib-task:${xpVersion}"
-  // include "com.enonic.xp:lib-value:${xpVersion}"
-  // include "com.enonic.xp:lib-vhost:${xpVersion}"
-  // include "com.enonic.xp:lib-websocket:${xpVersion}"
+  // Libraries bundled with Enonic XP (versioned by xpVersion via the xplibs catalog)
+  // ─────────────────────────────────────────────────────────────────────────
+  include xplibs.admin
+  // include xplibs.app
+  // include xplibs.auditlog
+  // include xplibs.auth
+  // include xplibs.cluster
+  // include xplibs.common
+  // include xplibs.content
+  // include xplibs.context
+  // include xplibs.event
+  // include xplibs.export
+  // include xplibs.grid
+  // include xplibs.i18n
+  // include xplibs.io
+  // include xplibs.mail
+  // include xplibs.node
+  include xplibs.portal
+  // include xplibs.project
+  // include xplibs.repo
+  // include xplibs.scheduler
+  // include xplibs.schema
+  // include xplibs.sse
+  // include xplibs.task
+  // include xplibs.value
+  // include xplibs.vhost
+  // include xplibs.websocket
 
   // ─────────────────────────────────────────────────────────────────────────
-  // Libraries from the Enonic Market ( https://market.enonic.com/libraries )
+  // Libraries from the Enonic Market (versions in gradle/libs.versions.toml)
   // ─────────────────────────────────────────────────────────────────────────
+
+  // https://market.enonic.com/vendors/enonic/lib-asset
+  // include libs.asset
 
   // https://market.enonic.com/vendors/enonic/cache-lib
-  // include 'com.enonic.lib:lib-cache:2.2.0'
+  // include libs.cache
 
   // https://market.enonic.com/vendors/enonic/http-client-lib
-  // include 'com.enonic.lib:lib-http-client:3.2.2'
+  // include libs.http.client
 
   // https://market.enonic.com/vendors/enonic/mustache-lib
-  // include 'com.enonic.lib:lib-mustache:2.1.1'
+  // include libs.mustache
 
   // https://market.enonic.com/vendors/enonic/router-lib
-  // include 'com.enonic.lib:lib-router:3.1.0'
+  // include libs.router
 
-  // https://market.enonic.com/vendors/enonic/static-asset-lib
-  // include 'com.enonic.lib:lib-static:1.0.3'
+  // https://market.enonic.com/vendors/enonic/lib-static
+  // include libs.static
 
-  // https://market.enonic.com/vendors/enonic/text-encoding
-  // include 'com.enonic.lib:lib-text-encoding:2.1.1'
-
-  // ─────────────────────────────────────────────────────────────────────────
-  // Item Libraries (https://repo.itemtest.no/#/releases)
-  // ─────────────────────────────────────────────────────────────────────────
-  //include "no.item:lib-xp-turbo:1.1.2"
-  include "no.item:lib-xp-time:1.2.1"
+  // https://market.enonic.com/vendors/enonic/thymeleaf-lib
+  // include libs.thymeleaf
 
   // ─────────────────────────────────────────────────────────────────────────
-  // 3rd Party libraries
+  // Item libraries (https://repo.itemtest.no/#/releases)
   // ─────────────────────────────────────────────────────────────────────────
-  include "no.item:lib-xp-freemarker:3.0.0-SNAPSHOT"
+  include libs.item.freemarker
+  include libs.item.time
+  // include libs.item.turbo
 
   // ─────────────────────────────────────────────────────────────────────────
   // Webjars (https://www.webjars.org/)
   // ─────────────────────────────────────────────────────────────────────────
-  webjar "org.webjars.npm:oddbird__popover-polyfill:0.5.2"
-  webjar "org.webjars.npm:hotwired__turbo:8.0.13"
+  webjar libs.webjar.popover.polyfill
+  webjar libs.webjar.turbo
 }
 
 repositories {
   mavenLocal()
   mavenCentral()
   xp.enonicRepo()
-  maven { url "https://repo.itemtest.no/releases" }
-  maven { url "https://repo.itemtest.no/snapshots" }
+  maven { url = "https://repo.itemtest.no/releases" }
+  maven { url = "https://repo.itemtest.no/snapshots" }
 }
 
 node {
@@ -99,7 +91,7 @@ node {
 
   // Version of node to download and install (only used if download is true)
   // It will be unpacked in the workDir
-  version = '22.15.1'
+  version = '24.20.0'
 }
 
 processResources {
@@ -107,14 +99,6 @@ processResources {
   exclude '**/*.json'
 	exclude '**/*.ts'
 	exclude '**/*.tsx'
-}
-
-tasks.register('dev', Exec) {
-  if (org.gradle.internal.os.OperatingSystem.current().isWindows()) {
-    commandLine 'cmd', '/c', 'gradlew.bat', 'deploy', '-t'
-  } else {
-    commandLine './gradlew', 'deploy', '-t'
-  }
 }
 
 tasks.register('npmBuild', NpmTask) {
@@ -128,7 +112,7 @@ tasks.register('npmBuild', NpmTask) {
   environment = [
     'FORCE_COLOR': 'true',
     'LOG_LEVEL_FROM_GRADLE': gradle.startParameter.logLevel.toString(),
-    'NODE_ENV': project.hasProperty('dev') || project.hasProperty('development') ? 'development' : 'production'
+    'NODE_ENV': project.findProperty('env') == 'dev' ? 'development' : 'production'
   ]
   inputs.dir 'src/main/resources'
   outputs.dir 'build/resources/main'
@@ -139,6 +123,7 @@ jar.dependsOn npmBuild
 
 tasks.register('npmCheck', NpmTask) {
 	dependsOn npmInstall
+	dependsOn generateTypeScript
 	args = [
 		'run',
 		'check'

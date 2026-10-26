@@ -1,11 +1,12 @@
 import { getContent, getComponent, type Content } from "/lib/xp/portal";
 import { assertIsDefined } from "/lib/myproject/utils";
 import { render } from "/lib/freemarker";
-import type { Article } from "/site/content-types";
+import type { Article } from "/cms/content-types";
+import type { ArticleHeader } from "/cms/parts";
 import type { FreemarkerParams } from "./article-header.freemarker";
 import type { Response, PartComponent } from "@enonic-types/core";
 
-type PartArticleHeader = PartComponent<"no.item.starter:article-header">;
+type PartArticleHeader = PartComponent<"no.item.starter:article-header", ArticleHeader>;
 
 const view = resolve("./article-header.ftl");
 

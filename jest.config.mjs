@@ -1,6 +1,3 @@
-import type { Config } from '@jest/types';
-
-
 const DIR_SRC = 'src/main/resources';
 const DIR_SRC_JEST = 'src/jest';
 const DIR_SRC_JEST_CLIENT = `${DIR_SRC_JEST}/client`;
@@ -11,17 +8,39 @@ const TEST_EXT = `{spec,test}.{ts,tsx}`;
 const TEST_FILES = `*.${TEST_EXT}`;
 
 
-const commonConfig: Config.InitialProjectOptions = {
+// TypeScript (and TSX) test files are transpiled by SWC. Unlike ts-jest, SWC
+// only strips types — it does not type-check. Type errors in tests are caught
+// by your editor and the `check:types` script.
+const transform = {
+  '^.+\\.(ts|js)x?$': [
+    '@swc/jest',
+    {
+      jsc: {
+        parser: {
+          syntax: 'typescript',
+          tsx: true,
+        },
+        transform: {
+          react: {
+            runtime: 'automatic',
+          },
+        },
+        target: 'es2022',
+      },
+      sourceMaps: 'inline', // Important to get correct line numbers when running coverage tests
+    },
+  ],
+};
+
+const commonConfig = {
   collectCoverageFrom: [
     `${DIR_SRC}/${AND_BELOW}/${SOURCE_FILES}`,
   ],
 
-  // Insert Jest's globals (expect, test, describe, beforeEach etc.) into the
-  // global environment. If you set this to false, you should import from @jest/globals, e.g.
-  // injectGlobals: true, // Doesn't seem to work?
+  transform,
 };
 
-const clientSideConfig: Config.InitialProjectOptions = {
+const clientSideConfig = {
   ...commonConfig,
   displayName: {
     color: 'white',
@@ -53,17 +72,9 @@ const clientSideConfig: Config.InitialProjectOptions = {
   testMatch: [
     `<rootDir>/${DIR_SRC_JEST_CLIENT}/${AND_BELOW}/${TEST_FILES}`,
   ],
-  transform: {
-    "^.+\\.(ts|js)x?$": [
-      'ts-jest',
-      {
-        tsconfig: `${DIR_SRC_JEST_CLIENT}/tsconfig.json`
-      }
-    ]
-  }
 };
 
-const serverSideConfig: Config.InitialProjectOptions = {
+const serverSideConfig = {
   ...commonConfig,
   displayName: {
     color: 'blue',
@@ -119,18 +130,10 @@ const serverSideConfig: Config.InitialProjectOptions = {
   testMatch: [
     `<rootDir>/${DIR_SRC_JEST_SERVER}/${AND_BELOW}/${TEST_FILES}`,
   ],
-
-  transform: {
-    "^.+\\.(ts|js)x?$": [
-      'ts-jest',
-      {
-          tsconfig: `${DIR_SRC_JEST_SERVER}/tsconfig.json`
-      }
-    ]
-  },
 };
 
-const customJestConfig: Config.InitialOptions = {
+/** @type {import('jest').Config} */
+const customJestConfig = {
   coverageProvider: 'v8', // To get correct line numbers under jsdom
   passWithNoTests: true,
   projects: [clientSideConfig, serverSideConfig],

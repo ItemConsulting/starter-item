@@ -25,10 +25,10 @@
   ],
 
   "compilerOptions": {
-    "strict": true,
-    "skipLibCheck": true,
+    "target": "ES2023",
     "lib": [
-      "DOM" // console, document, window, etc...
-    ]
+      "ES2023",
+      "DOM", // console, document, window, etc...
+    ],
   },
 }

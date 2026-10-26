@@ -1,0 +1,13 @@
+kind: "Part"
+title:
+  text: "Simple Header"
+  i18n: "part.article-header.displayName"
+description:
+  text: "Simple header for articles"
+  i18n: "part.article-header.description"
+form:
+  - type: "TextLine"
+    name: "intro"
+    label:
+      text: "Intro"
+      i18n: "part.article-header.intro"
